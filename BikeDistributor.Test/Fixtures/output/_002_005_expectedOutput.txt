@@ -1,0 +1,15 @@
+﻿Order Receipt for Anywhere Bike Shop
+	20 x Giant Defy 1 = $20,000.00
+discount:	$2,000.00 
+line total: $18,000.00
+	20 x Giant Defy 1 SE = $20,000.00
+discount:	$2,000.00 
+line sub-total: $18,000.00
+	20 x gray = $4,000.00
+	20 x Carbon Fiber = $16,000.00
+	20 x Shimano = $6,000.00
+	20 x set of spare pedals = $1,000.00
+line total: $45,000.00
+Sub-Total: $63,000.00
+Tax: $4,567.50
+Total: $67,567.50

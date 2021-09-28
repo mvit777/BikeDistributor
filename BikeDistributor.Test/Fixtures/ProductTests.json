@@ -1,0 +1,173 @@
+{
+  "tests": [
+    {
+      "description": "All test data in one lengthy file. Would be nice to let config merge any xxxTest.json from the Fixtures folder",
+      "bikes": [
+        {
+          "Model": "Defy 1",
+          "Brand": "Giant",
+          "Price": 1000,
+          "isStandard": true
+        },
+        {
+          "Model": "Defy 1 SE",
+          "Brand": "Giant",
+          "Price": 1000,
+          "isStandard": false,
+          "options": [
+            {
+              "Name": "Color",
+              "Description": "gray",
+              "Price": 200
+            },
+            {
+              "Name": "Material",
+              "Description": "Carbon Fiber",
+              "Price": 800
+            },
+            {
+              "Name": "Gear",
+              "Description": "Shimano",
+              "Price": 300
+            },
+            {
+              "Name": "Pedals",
+              "Description": "set of spare pedals",
+              "Price": 50
+            }
+          ]
+        }
+      ],
+      "optionsList": [
+        {
+          "Name": "Color",
+          "Description": "white",
+          "Price": 150
+        },
+        {
+          "Name": "Color",
+          "Description": "black",
+          "Price": 250
+        },
+        {
+          "Name": "Color",
+          "Description": "red",
+          "Price": 250
+        },
+        {
+          "Name": "Material",
+          "Description": "Titanium",
+          "Price": 800
+        },
+        {
+          "Name": "Material",
+          "Description": "Carbon Fiber",
+          "Price": 800
+        },
+        {
+          "Name": "Gear",
+          "Description": "Shimano",
+          "Price": 300
+        },
+        {
+          "Name": "Gear",
+          "Description": "Chooee",
+          "Price": 280
+        },
+        {
+          "Name": "Pedals",
+          "Description": "set of spare pedals",
+          "Price": 50
+        }
+      ],
+      "Discounts": [
+        {
+          "QuantityThreeShold": 20,
+          "UnitPriceThreeShold": 1000,
+          "Percentage": 0.9
+        },
+        {
+          "QuantityThreeShold": 10,
+          "UnitPriceThreeShold": 2000,
+          "Percentage": 0.8
+        },
+        {
+          "QuantityThreeShold": 5,
+          "UnitPriceThreeShold": 5000,
+          "Percentage": 0.8
+        }
+      ],
+      "TestSettings": [
+        {
+          "Name": "defaultSettings",
+          "TaxRate": 0.0725
+
+        }
+      ],
+      "Orders": [
+        {
+          "OrderId": "1",
+          "Company": "Anywhere Bike Shop",
+          "Format": "Html",
+          "Culture": "en-us",
+          "TaxRate": 0.0725,
+          "Lines": [
+            {
+              "Model": "Defy 1",
+              "Brand": "Giant",
+              "Price": 1000,
+              "isStandard": true,
+              "Quantity": 10
+            },
+            {
+              "Model": "Defy 1 SE",
+              "Brand": "Giant",
+              "Price": 1000,
+              "isStandard": false,
+              "Quantity": 10,
+              "options": [
+                {
+                  "Name": "Color",
+                  "Description": "gray",
+                  "Price": 200
+                },
+                {
+                  "Name": "Material",
+                  "Description": "Carbon Fiber",
+                  "Price": 800
+                },
+                {
+                  "Name": "Gear",
+                  "Description": "Shimano",
+                  "Price": 300
+                },
+                {
+                  "Name": "Pedals",
+                  "Description": "set of spare pedals",
+                  "Price": 50
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "OrderId": "2",
+          "Company": "Pippo's Bikes",
+          "Format": "Text",
+          "Culture": "en-us",
+          "TaxRate": 0.0725,
+          "Lines": [
+            {
+              "Model": "Defy 1",
+              "Brand": "Giant",
+              "Price": 1000,
+              "isStandard": true,
+              "Quantity": 20
+            }
+          ]
+        }
+
+      ]
+    }
+  ]
+}

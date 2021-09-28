@@ -1,0 +1,5 @@
+﻿Order Receipt for Anywhere Bike Shop
+	1 x Specialized S-Works Venge Dura-Ace = $5,000.00
+Sub-Total: $5,000.00
+Tax: $362.50
+Total: $5,362.50

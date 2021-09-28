@@ -1,0 +1,5 @@
+﻿Order Receipt for Anywhere Bike Shop
+	1 x Giant Defy 1 = $1,000.00
+Sub-Total: $1,000.00
+Tax: $72.50
+Total: $1,072.50
