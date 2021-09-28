@@ -1,4 +1,5 @@
 ﻿using BikeDistributor.Infrastructure.interfaces;
+using MongoDB.Bson;
 using MongoDB.Bson.Serialization.Attributes;
 using System;
 using System.Collections.Generic;
@@ -13,7 +14,7 @@ namespace BikeDistributor.Domain
     public class MongoEntityBike
     {
         [BsonId]
-        //[BsonRepresentation(BsonType.ObjectId)]
+        [BsonRepresentation(BsonType.String)]
         public string Id { get; set; }
         public IBike Bike { get; set; }
         public MongoEntityBike(IBike bike)

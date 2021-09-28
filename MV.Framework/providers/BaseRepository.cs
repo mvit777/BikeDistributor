@@ -19,18 +19,27 @@ namespace MV.Framework.providers
             _mongoContext = context;
             _dbCollection = _mongoContext.GetCollection<TEntity>(typeof(TEntity).Name);
         }
-
-
         public async Task<TEntity> Get(string id)
         {
-            //ex. 5dc1039a1521eaa36835e541
-
             var objectId = new ObjectId(id);
-
             FilterDefinition<TEntity> filter = Builders<TEntity>.Filter.Eq("_id", objectId);
-
             return await _dbCollection.FindAsync(filter).Result.FirstOrDefaultAsync();
+        }
 
+        public async Task<TEntity> Get(string id, bool usePlainTextId)
+        {
+            FilterDefinition<TEntity> filter = null;
+            if (usePlainTextId==false)
+            {
+                //ex. 5dc1039a1521eaa36835e541
+                var objectId = new ObjectId(id);
+                filter = Builders<TEntity>.Filter.Eq("_id", objectId);
+            }
+            else
+            {
+                filter = Builders<TEntity>.Filter.Eq("_id", id);
+            }
+            return await _dbCollection.FindAsync(filter).Result.FirstOrDefaultAsync();
         }
 
 
@@ -57,10 +66,26 @@ namespace MV.Framework.providers
         public void Delete(string id)
         {
             //ex. 5dc1039a1521eaa36835e541
-
             var objectId = new ObjectId(id);
             _dbCollection.DeleteOneAsync(Builders<TEntity>.Filter.Eq("_id", objectId));
 
         }
+        public void Delete(string id, bool usePlainTextId)
+        {
+            if (usePlainTextId == true)
+            {
+                _dbCollection.DeleteOneAsync(Builders<TEntity>.Filter.Eq("_id", id));
+            }
+            else
+            {
+                //ex. 5dc1039a1521eaa36835e541
+                var objectId = new ObjectId(id);
+                _dbCollection.DeleteOneAsync(Builders<TEntity>.Filter.Eq("_id", objectId));
+            }
+           
+
+        }
+
+
     }
 }

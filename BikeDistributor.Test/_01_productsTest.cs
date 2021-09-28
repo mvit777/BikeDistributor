@@ -32,7 +32,7 @@ namespace BikeDistributor.Test
         private MongoSettings _mongoSettings = null;
         public _01_productsTest()
         {
-            BsonSerializer.RegisterIdGenerator(typeof(string), new StringObjectIdGenerator());
+            //BsonSerializer.RegisterIdGenerator(typeof(string), new StringObjectIdGenerator());
             _config = new TestConfig(_productTestsConfigFile);
             _mongoSettings = new MongoSettings();
             _mongoSettings.Connection = _mongoUrl;
@@ -46,19 +46,22 @@ namespace BikeDistributor.Test
             return new MongoDBContext(_mongoSettings);
         }
 
+        private JObject GetJBike(int index)
+        {
+            return _config.GetJObject("bikes", index);
+        }
+
         [Fact]
         public void _01_01_GetProduct()
         {
-            JObject jBike = _config.GetJObject("bikes", 0);
-            var bike =(Bike)BikeFactory.Create(jBike).GetBike();
+            var bike =(Bike)BikeFactory.Create(GetJBike(0)).GetBike();
             bike.isStandard.Should().Be(true);
         }
 
         [Fact]
         public async Task _01_02_SaveProductMongoAsync()
         {          
-            JObject jBike = _config.GetJObject("bikes", 1);
-            var bike = BikeFactory.Create(jBike).GetBike();
+            var bike = BikeFactory.Create(GetJBike(1)).GetBike();
             bike.isStandard.Should().Be(false);
             var bv = (BikeVariant)bike;
             bv.GetOptions().Count.Should().BeGreaterThan(0);
@@ -68,21 +71,39 @@ namespace BikeDistributor.Test
             await bikeRepo.Create(defySe);
             var bikes = (List<MongoEntityBike>)await bikeRepo.Get();
             bikes.Count.Should().Be(1);
-            //var getInserted = await bikeRepo.Get(defySe.Bike.Model); //id is not in correct format
-            //var justInsertedBikeVariant = (BikeVariant)getInserted.Bike;
-            //justInsertedBikeVariant.GetOptions().Count.Should().BeGreaterThan(0);
-
+            var getInserted = await bikeRepo.Get(defySe.Bike.Model, true); //id is not in correct format
+            var justInsertedBikeVariant = (BikeVariant)getInserted.Bike;
+            justInsertedBikeVariant.GetOptions().Count.Should().BeGreaterThan(0);
+            bikeRepo.Delete(getInserted.Id, true);
+            bikes = (List<MongoEntityBike>)await bikeRepo.Get();
+            bikes.Count.Should().Be(0);
         }
 
         [Fact]
-        public async Task _01_03_UsingServiceSaveAsync()
+        public async Task _01_03_UsingServiceAddAsync()
         {
-            JObject jBike = _config.GetJObject("bikes", 0);
-            var bike = BikeFactory.Create(jBike).GetBike();
+            var bike = BikeFactory.Create(GetJBike(0)).GetBike();
             var bikeService =(MongoBikeService) ServiceUtils.GetBikeMongoService(_mongoUrl, _mongoDbName);
             await bikeService.AddBikeAsync(bike);
-            List<MongoEntityBike> bikes = await bikeService.Get();
-            bikes.Count.Should().Be(2);
+            MongoEntityBike meb = await bikeService.Get(bike.Model);
+            meb.Bike.Brand.Should().Be(bike.Brand);
+        }
+
+        [Fact]
+        public async Task _01_04_UsingServiceUpdateDeleteAsync() //fails
+        {
+            var bike = BikeFactory.Create(GetJBike(1)).GetBike();
+            var bikeService = (MongoBikeService)ServiceUtils.GetBikeMongoService(_mongoUrl, _mongoDbName);
+            await bikeService.AddBikeAsync(bike);
+            MongoEntityBike meb = await bikeService.Get(bike.Model);
+            int initialPrice = meb.Bike.Price;
+            var bv = (BikeVariant)meb.Bike;
+            bv.SetTotalPrice(BikeOption.Create("Golden Chain").Create("an uncommon chain to show off", 400));
+            int newPrice = meb.Bike.Price + 400;
+            meb = await bikeService.Get(bike.Model);
+            meb.Bike.Price.Should().Equals(newPrice);
+            //bikeService.Delete(meb.Id);
+            throw new Exception(meb.Bike.Price.ToString() + "==" + newPrice.ToString());
         }
 
     }

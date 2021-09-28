@@ -16,7 +16,10 @@ namespace BikeDistributor.Infrastructure.services
         private MongoDBContext _context;
         private BikeRepository _bikeRepo;
         
-
+        /// <summary>
+        /// TODO: do this service work only in terms of bikes and not meb. See addAsync for better explanation
+        /// </summary>
+        /// <param name="context"></param>
         public MongoBikeService(MongoDBContext context)
         {
             _context = context;
@@ -33,6 +36,18 @@ namespace BikeDistributor.Infrastructure.services
         public async Task<List<MongoEntityBike>> Get()
         {
            return (List<MongoEntityBike>)await _bikeRepo.Get();
+        }
+        public async Task<MongoEntityBike> Get(string id)
+        {
+            return await _bikeRepo.Get(id, true);
+        }
+        public void Update(MongoEntityBike obj)
+        {
+            _bikeRepo.Update(obj);
+        }
+        public void Delete(string id)
+        {
+            _bikeRepo.Delete(id, true);
         }
     }
 }
