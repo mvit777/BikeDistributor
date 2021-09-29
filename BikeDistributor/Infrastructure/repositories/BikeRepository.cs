@@ -10,6 +10,11 @@ using System.Threading.Tasks;
 
 namespace BikeDistributor.Infrastructure.repositories
 {
+    /// <summary>
+    /// Never uses this class directly. I'm not (yet) making this class internal 
+    /// for the sole purpose of testing.
+    /// Use (Mongo)BikeService instead.
+    /// </summary>
     public class BikeRepository : BaseRepository<MongoEntityBike>, IBikeRepository
     {
         public BikeRepository(IMongoDBContext context) : base(context)

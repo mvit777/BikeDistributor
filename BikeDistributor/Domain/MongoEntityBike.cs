@@ -16,11 +16,13 @@ namespace BikeDistributor.Domain
         [BsonId]
         [BsonRepresentation(BsonType.String)]
         public string Id { get; set; }
+        public int TotalPrice { get; set; }
         public IBike Bike { get; set; }
         public MongoEntityBike(IBike bike)
         {
             Bike = bike;
             Id = Bike.Model;
+             TotalPrice = Bike.Price;          
         }
 
     }

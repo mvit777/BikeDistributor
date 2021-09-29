@@ -29,7 +29,7 @@ namespace BikeDistributor.Infrastructure.services
         public async Task AddBikeAsync(IBike bike)
         {
             var meb = new MongoEntityBike(bike);
-          
+            meb.TotalPrice = bike.Price;
             await _bikeRepo.Create(meb);
         }
 
@@ -43,6 +43,8 @@ namespace BikeDistributor.Infrastructure.services
         }
         public void Update(MongoEntityBike obj)
         {
+
+            obj.TotalPrice = obj.Bike.Price;//wrong
             _bikeRepo.Update(obj);
         }
         public void Delete(string id)

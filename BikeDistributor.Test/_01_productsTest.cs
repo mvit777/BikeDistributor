@@ -106,8 +106,9 @@ namespace BikeDistributor.Test
             bv.SetTotalPrice(goldenChain);
             int newPrice = initialPrice + goldenChain.Price;
             bv.Price.Should().Equals(newPrice);
+            bv.Price.Should().Equals(2750);
             meb.Bike = bv;
-            bikeService.Update(meb);
+            bikeService.Update(meb);//wrong
             meb = await bikeService.Get(bike.Model);
             meb.Bike.Price.Should().Equals(newPrice);
             var bv2 = (BikeVariant)meb.Bike;
