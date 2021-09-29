@@ -1,6 +1,7 @@
 using BikeDistributor.Domain;
 using BikeDistributor.Infrastructure.core;
 using BikeDistributor.Infrastructure.factories;
+using BikeDistributor.Infrastructure.interfaces;
 using BikeDistributor.Infrastructure.repositories;
 using BikeDistributor.Infrastructure.services;
 using FluentAssertions;
@@ -95,15 +96,22 @@ namespace BikeDistributor.Test
             var bike = BikeFactory.Create(GetJBike(1)).GetBike();
             var bikeService = (MongoBikeService)ServiceUtils.GetBikeMongoService(_mongoUrl, _mongoDbName);
             await bikeService.AddBikeAsync(bike);
+            bike.Price.Should().Equals(2350);
             MongoEntityBike meb = await bikeService.Get(bike.Model);
             int initialPrice = meb.Bike.Price;
-            var bv = (BikeVariant)meb.Bike;
-            bv.SetTotalPrice(BikeOption.Create("Golden Chain").Create("an uncommon chain to show off", 400));
-            int newPrice = meb.Bike.Price + 400;
-            meb = await bikeService.Get(bike.Model);
-            meb.Bike.Price.Should().Equals(newPrice);
-            //bikeService.Delete(meb.Id);
-            throw new Exception(meb.Bike.Price.ToString() + "==" + newPrice.ToString());
+            initialPrice.Should().Equals(2350);
+            //meb.Bike.Brand.Should().Be("Giant");
+            //var bv = (BikeVariant)meb.Bike;
+            //bv.Price.Should().Equals(initialPrice);
+            //bv.SetTotalPrice(BikeOption.Create("Golden Chain").Create("an uncommon chain to show off", 400));
+            //bv.Price.Should().Equals(2750);
+            //meb.Bike = (IBike)bv;
+            //bikeService.Update(meb);
+            //int newPrice = 2350 + 400;
+            //meb = await bikeService.Get(bike.Model);
+            //meb.Bike.Price.Should().Equals(newPrice);
+            ////bikeService.Delete(meb.Id);
+            //throw new Exception(meb.Bike.Price.ToString() + "==" + newPrice.ToString());
         }
 
     }

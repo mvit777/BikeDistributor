@@ -10,5 +10,6 @@ namespace BikeDistributor.Infrastructure.interfaces
 {
     public interface IBikeRepository : IBaseRepository<MongoEntityBike>
     {
+
     }
 }

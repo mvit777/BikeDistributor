@@ -60,8 +60,8 @@ namespace MV.Framework.providers
         public virtual void Update(TEntity obj)
         {
             //see comment at https://www.thecodebuzz.com/mongodb-repository-implementation-unit-testing-net-core-example/#dbcontext
-            //might not work cos he is using core and not .net 
-            _dbCollection.ReplaceOneAsync(Builders<TEntity>.Filter.Eq("_id", obj.GetType().GetField("Id").GetValue(obj)), obj);
+            var pkValue = obj.GetType().GetProperty("Id").GetValue(obj);
+            _dbCollection.ReplaceOneAsync(Builders<TEntity>.Filter.Eq("_id", pkValue), obj);
         }
         public void Delete(string id)
         {
