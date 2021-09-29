@@ -91,26 +91,28 @@ namespace BikeDistributor.Test
         }
 
         [Fact]
-        public async Task _01_04_UsingServiceUpdateDeleteAsync() //fails
+        public async Task _01_04_UsingServiceAddUpdateDeleteAsync() //fails
         {
+            int initialPrice = 2350;
             var bike = BikeFactory.Create(GetJBike(1)).GetBike();
             var bikeService = (MongoBikeService)ServiceUtils.GetBikeMongoService(_mongoUrl, _mongoDbName);
             await bikeService.AddBikeAsync(bike);
-            bike.Price.Should().Equals(2350);
+            bike.Price.Should().Equals(initialPrice);
             MongoEntityBike meb = await bikeService.Get(bike.Model);
-            int initialPrice = meb.Bike.Price;
-            initialPrice.Should().Equals(2350);
-            //meb.Bike.Brand.Should().Be("Giant");
-            //var bv = (BikeVariant)meb.Bike;
-            //bv.Price.Should().Equals(initialPrice);
-            //bv.SetTotalPrice(BikeOption.Create("Golden Chain").Create("an uncommon chain to show off", 400));
-            //bv.Price.Should().Equals(2750);
-            //meb.Bike = (IBike)bv;
-            //bikeService.Update(meb);
-            //int newPrice = 2350 + 400;
-            //meb = await bikeService.Get(bike.Model);
-            //meb.Bike.Price.Should().Equals(newPrice);
-            ////bikeService.Delete(meb.Id);
+            meb.Bike.Price.Should().Equals(initialPrice);
+            meb.Bike.Brand.Should().Be("Giant");
+            var bv = (BikeVariant)meb.Bike;
+            var goldenChain = BikeOption.Create("Golden Chain").Create("an uncommon chain to show off", 400);
+            bv.SetTotalPrice(goldenChain);
+            int newPrice = initialPrice + goldenChain.Price;
+            bv.Price.Should().Equals(newPrice);
+            meb.Bike = bv;
+            bikeService.Update(meb);
+            meb = await bikeService.Get(bike.Model);
+            meb.Bike.Price.Should().Equals(newPrice);
+            var bv2 = (BikeVariant)meb.Bike;
+            bv2.GetBasePrice().Should().Equals(Bike.OneThousand);
+            //bikeService.Delete(meb.Id);
             //throw new Exception(meb.Bike.Price.ToString() + "==" + newPrice.ToString());
         }
 

@@ -8,9 +8,9 @@ namespace BikeDistributor.Infrastructure.interfaces
 {
     public interface IBike
     {
-        string Brand { get; }
-        string Model { get; }
+        string Brand { get; set; }
+        string Model { get; set; }
         int Price { get; }
-        bool isStandard { get; }
+        bool isStandard { get;  }
     }
 }

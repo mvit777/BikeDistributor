@@ -23,10 +23,11 @@ namespace BikeDistributor.Domain
                 }
                 return _price;
             }
+           
         }
         public override bool isStandard => false;
 
-       public List<BikeOption> SelectedOptions
+        public List<BikeOption> SelectedOptions
         {
             get
             {

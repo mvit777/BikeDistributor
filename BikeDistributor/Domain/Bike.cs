@@ -10,8 +10,8 @@ namespace BikeDistributor.Domain
         public const int FiveThousand = 5000;
 
         private int _price;
-        public string Brand { get; }
-        public string Model { get; }
+        public string Brand { get; set; }
+        public string Model { get; set; }
         public virtual int Price { get => _price; }
         public virtual bool isStandard { get => true; }
 
