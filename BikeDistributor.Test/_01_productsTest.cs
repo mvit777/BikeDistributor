@@ -60,7 +60,11 @@ namespace BikeDistributor.Test
             var bike =(Bike)BikeFactory.Create(GetJBike(0)).GetBike();
             bike.isStandard.Should().Be(true);
         }
-
+        /*
+        /// <summary>
+        /// commented as BikeRepo is now an internal class to enforce the use of BikeService
+        /// </summary>
+        /// <returns></returns>
         //[Fact]
         //public async Task _01_02_SaveProductMongoAsync()
         //{          
@@ -81,7 +85,12 @@ namespace BikeDistributor.Test
         //    bikes = (List<MongoEntityBike>)await bikeRepo.Get();
         //    bikes.Count.Should().Be(0);
         //}
-
+        */
+        
+        /// <summary>
+        /// Add a Bike using BikeService
+        /// </summary>
+        /// <returns></returns>
         [Fact]
         public async Task _01_03_UsingServiceAddAsync()
         {
@@ -92,15 +101,18 @@ namespace BikeDistributor.Test
             meb.Bike.Brand.Should().Be(bike.Brand);
         }
 
+        /// <summary>
+        /// BikeService Full CRUD
+        /// </summary>
+        /// <returns></returns>
         [Fact]
         public async Task _01_04_UsingServiceAddUpdateDeleteAsync() 
         {
             int initialPrice = 2350;
             var bike = BikeFactory.Create(GetJBike(1)).GetBike();
             var bikeService = (MongoBikeService)ServiceUtils.GetBikeMongoService(_mongoUrl, _mongoDbName);
-            await bikeService.AddBikeAsync(bike);
+            MongoEntityBike meb = await bikeService.AddBikeAsync(bike);
             bike.Price.Should().Equals(initialPrice);
-            MongoEntityBike meb = await bikeService.Get(bike.Model);
             meb.Bike.Price.Should().Equals(initialPrice);
             meb.Bike.Brand.Should().Be("Giant");
             var bv = (BikeVariant)meb.Bike;
@@ -110,8 +122,7 @@ namespace BikeDistributor.Test
             bv.Price.Should().Equals(newPrice);
             bv.Price.Should().Equals(2750);
             meb.Bike = bv;
-            bikeService.Update(meb);//wrong
-            meb = await bikeService.Get(bike.Model);
+            meb = bikeService.Update(meb);
             meb.Bike.Price.Should().Equals(newPrice);
             var bv2 = (BikeVariant)meb.Bike;
             bv2.GetBasePrice().Should().Equals(Bike.OneThousand);

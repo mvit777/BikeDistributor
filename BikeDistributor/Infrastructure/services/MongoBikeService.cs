@@ -27,11 +27,13 @@ namespace BikeDistributor.Infrastructure.services
             _bikeRepo = new BikeRepository(_context);
         }
 
-        public async Task AddBikeAsync(IBike bike)
+        public async Task<MongoEntityBike> AddBikeAsync(IBike bike)
         {
             var meb = new MongoEntityBike(bike);
             //meb.TotalPrice = bike.Price;
             await _bikeRepo.Create(meb);
+
+            return await _bikeRepo.Get(bike.Model, true);
         }
 
         public async Task<List<MongoEntityBike>> Get()
@@ -42,11 +44,13 @@ namespace BikeDistributor.Infrastructure.services
         {
             return await _bikeRepo.Get(id, true);
         }
-        public void Update(MongoEntityBike obj)
+        public MongoEntityBike Update(MongoEntityBike obj)
         {
 
             obj.TotalPrice = obj.Bike.Price;//ok
             _bikeRepo.Update(obj);
+
+            return obj;
         }
         public void Delete(string id)
         {

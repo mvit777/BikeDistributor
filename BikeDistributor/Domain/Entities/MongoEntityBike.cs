@@ -22,7 +22,7 @@ namespace BikeDistributor.Domain.Entities
         {
             Bike = bike;
             Id = Bike.Model;
-             TotalPrice = Bike.Price;          
+            TotalPrice = Bike.Price;          
         }
 
     }

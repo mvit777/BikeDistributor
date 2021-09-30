@@ -16,9 +16,9 @@ namespace BikeDistributor.Infrastructure.repositories
     /// for the sole purpose of testing.
     /// Use (Mongo)BikeService instead.
     /// </summary>
-    internal class BikeRepository : BaseRepository<MongoEntityBike>, IBikeRepository
+    public class BikeRepository : BaseRepository<MongoEntityBike>, IBikeRepository
     {
-        public BikeRepository(IMongoDBContext context) : base(context)
+        internal BikeRepository(IMongoDBContext context) : base(context)
         {
         }
     }
