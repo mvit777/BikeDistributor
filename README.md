@@ -20,9 +20,9 @@ MongoEntities are saved into respective Repository<MongoEntityXXX> which are onl
 The library also features some business-domain-specific plumbing and infrasctures that we will see later (maybe) 
 
 ### MV.Framework: ###
-This a business-domain-agnostic library.
+This is a business-domain-agnostic library.
   It mainly contains Generic Interfaces and BaseClasses (Ex. BaseRepository) with a high potential of being re-usable in BikeDistributor-like projects.
   Same goes for other plumbing-facilities like DbQueryAsyncProvider, MongoContext, MongoSettings and the like.
   
- ### BikeDistributor.Test ###
+ ### BikeDistributor.Test: ###
  Unit-Test project for the **BikeDistributor** project
