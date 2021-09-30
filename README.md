@@ -14,8 +14,9 @@ In this case it is a greatly simplified Product Catalog + Chart like app.
 
 We have a bunch of Domain Models (namely Product, ProductOption, Order, ReceiptFormat, Customer) wrapped into respective MongoEnititesXXX.
 MongoEntities are saved into respective Repository<MongoEntityXXX> which are only accessible via specialized MongoServicesXXX which take care of CRUD
-  and everything else needed. An implementation of the Repository pattern, in short. Data got written in No-sql db MongoDb and all evolve around the concept 
-  of collections.
+  and everything else needed. An implementation of the Repository pattern, in short. 
+  
+  Data get written in No-sql db MongoDb and all revolve around the concept of collections.
   
 The library also features some business-domain-specific plumbing and infrasctures that we will see later (maybe) 
 
