@@ -11,6 +11,7 @@ namespace BikeDistributor.Infrastructure.interfaces
         string Brand { get; set; }
         string Model { get; set; }
         int Price { get; }
+        int BasePrice { get; set; }
         bool isStandard { get;  }
     }
 }

@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace BikeDistributor.Domain
+namespace BikeDistributor.Domain.Models
 {
     public class Discount
     {

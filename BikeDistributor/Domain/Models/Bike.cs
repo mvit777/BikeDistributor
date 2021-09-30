@@ -1,7 +1,7 @@
 ﻿using BikeDistributor.Infrastructure.interfaces;
 using System;
 
-namespace BikeDistributor.Domain
+namespace BikeDistributor.Domain.Models
 {
     public class Bike : IBike
     {
@@ -13,10 +13,13 @@ namespace BikeDistributor.Domain
         public string Brand { get; set; }
         public string Model { get; set; }
         public virtual int Price { get => _price; }
+        public virtual int BasePrice { get; set; } = 0;
+
         public virtual bool isStandard { get => true; }
 
         public Bike(string brand, string model, int price)
         {
+            BasePrice = price;
             if (string.IsNullOrEmpty(brand) || string.IsNullOrEmpty(model))
             {
                 throw new Exception("cannot create an item without brand or model");

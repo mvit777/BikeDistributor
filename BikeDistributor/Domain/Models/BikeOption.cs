@@ -6,7 +6,7 @@ using System.Reflection;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace BikeDistributor.Domain
+namespace BikeDistributor.Domain.Models
 {
     //this class may also be used to create totally new options besides Color, Material, Gear
     //the only requirement is every option should have a Name != "" and must be unique for a given BikeVariant

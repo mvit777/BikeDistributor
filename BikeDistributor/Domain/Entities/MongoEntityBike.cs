@@ -7,7 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace BikeDistributor.Domain
+namespace BikeDistributor.Domain.Entities
 {
     //[BsonDiscriminator(Required = true)]
     //[BsonKnownTypes(typeof(Bike), typeof(BikeVariant))]

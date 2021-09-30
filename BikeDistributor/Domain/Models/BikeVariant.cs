@@ -4,12 +4,12 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace BikeDistributor.Domain
+namespace BikeDistributor.Domain.Models
 {
     public sealed class BikeVariant : Bike
     {
         private List<BikeOption> _SelectedOptions = new List<BikeOption>();
-        private int _basicPrice = 0;
+        public override int BasePrice { get; set; } = 0;
         private int _price = 0;
         private bool _priceNeedsUpdate = true; //a defensive variable to avoid (unlikely but possibile) multiple price updates when no option was added
         //we don't want Price to be set outside of SetTotalPrice call
@@ -51,7 +51,7 @@ namespace BikeDistributor.Domain
         /// <param name="price"></param>
         public BikeVariant(string brand, string model, int price, List<BikeOption> options = null) : base(brand, model, price)
         {
-            this._basicPrice = price;//keep in memory variant base price without options
+            this.BasePrice = price;//keep in memory variant base price without options
             if (options != null)
             {
                 this._SelectedOptions = options;
@@ -116,7 +116,7 @@ namespace BikeDistributor.Domain
         /// <returns></returns>
         public int GetBasePrice()
         {
-            return this._basicPrice;
+            return this.BasePrice;
         }
         public int GetOptionsTotalPrice()
         {
@@ -140,7 +140,7 @@ namespace BikeDistributor.Domain
                 return _price;
             }
             //we reset back to the original price of the bike with no options 
-            _price = this._basicPrice;
+            _price = this.BasePrice;
             //we add options price because some options may have been added or its price modified
             _price += this.GetOptionsTotalPrice();
             _priceNeedsUpdate = false;

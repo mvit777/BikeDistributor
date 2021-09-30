@@ -1,4 +1,6 @@
 using BikeDistributor.Domain;
+using BikeDistributor.Domain.Entities;
+using BikeDistributor.Domain.Models;
 using BikeDistributor.Infrastructure.core;
 using BikeDistributor.Infrastructure.factories;
 using BikeDistributor.Infrastructure.interfaces;
@@ -91,7 +93,7 @@ namespace BikeDistributor.Test
         }
 
         [Fact]
-        public async Task _01_04_UsingServiceAddUpdateDeleteAsync() //fails
+        public async Task _01_04_UsingServiceAddUpdateDeleteAsync() 
         {
             int initialPrice = 2350;
             var bike = BikeFactory.Create(GetJBike(1)).GetBike();

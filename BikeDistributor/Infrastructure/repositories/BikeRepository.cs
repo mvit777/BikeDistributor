@@ -1,4 +1,5 @@
 ﻿using BikeDistributor.Domain;
+using BikeDistributor.Domain.Entities;
 using BikeDistributor.Infrastructure.interfaces;
 using MV.Framework.interfaces;
 using MV.Framework.providers;
