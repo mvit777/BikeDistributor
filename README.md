@@ -41,7 +41,7 @@ This is a business-domain-agnostic library.
   
  I have not yet started to work on this project and I'm probably opting for a serverless blazor app in Net5.0
   
-### BikeShop.Bot.Customer ###
+### BikeShop.Bot.Customer.Random ###
 A selenium web-driver alike set of scripts to create Orders.
 
 It will pick Customers and issue orders randomly while testing the Blazor app user-interface
@@ -57,6 +57,6 @@ This bot should imitate the shopping behavior of 3-4 stereotypized customer beha
  Customer behaviors are composed by freely mixable collections of personality traits that act as indicators of a given Customer Behavior Model, so that you 
   can derive/create also new behaviorus.
   
- Customer Behavior Models are trained by BikeShop.Bot.AI.Customer. 
+ Customer Behavior Models are trained by BikeShop.Bot.Customer.AI 
   
  
