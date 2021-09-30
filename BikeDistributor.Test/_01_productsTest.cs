@@ -61,26 +61,26 @@ namespace BikeDistributor.Test
             bike.isStandard.Should().Be(true);
         }
 
-        [Fact]
-        public async Task _01_02_SaveProductMongoAsync()
-        {          
-            var bike = BikeFactory.Create(GetJBike(1)).GetBike();
-            bike.isStandard.Should().Be(false);
-            var bv = (BikeVariant)bike;
-            bv.GetOptions().Count.Should().BeGreaterThan(0);
-            bv.GetOption("Material").Description.Should().Be("Carbon Fiber");
-            var bikeRepo = new BikeRepository(_context);
-            var defySe = new MongoEntityBike(bv);
-            await bikeRepo.Create(defySe);
-            var bikes = (List<MongoEntityBike>)await bikeRepo.Get();
-            bikes.Count.Should().Be(1);
-            var getInserted = await bikeRepo.Get(defySe.Bike.Model, true); //id is not in correct format
-            var justInsertedBikeVariant = (BikeVariant)getInserted.Bike;
-            justInsertedBikeVariant.GetOptions().Count.Should().BeGreaterThan(0);
-            bikeRepo.Delete(getInserted.Id, true);
-            bikes = (List<MongoEntityBike>)await bikeRepo.Get();
-            bikes.Count.Should().Be(0);
-        }
+        //[Fact]
+        //public async Task _01_02_SaveProductMongoAsync()
+        //{          
+        //    var bike = BikeFactory.Create(GetJBike(1)).GetBike();
+        //    bike.isStandard.Should().Be(false);
+        //    var bv = (BikeVariant)bike;
+        //    bv.GetOptions().Count.Should().BeGreaterThan(0);
+        //    bv.GetOption("Material").Description.Should().Be("Carbon Fiber");
+        //    var bikeRepo = new BikeRepository(_context);
+        //    var defySe = new MongoEntityBike(bv);
+        //    await bikeRepo.Create(defySe);
+        //    var bikes = (List<MongoEntityBike>)await bikeRepo.Get();
+        //    bikes.Count.Should().Be(1);
+        //    var getInserted = await bikeRepo.Get(defySe.Bike.Model, true); //id is not in correct format
+        //    var justInsertedBikeVariant = (BikeVariant)getInserted.Bike;
+        //    justInsertedBikeVariant.GetOptions().Count.Should().BeGreaterThan(0);
+        //    bikeRepo.Delete(getInserted.Id, true);
+        //    bikes = (List<MongoEntityBike>)await bikeRepo.Get();
+        //    bikes.Count.Should().Be(0);
+        //}
 
         [Fact]
         public async Task _01_03_UsingServiceAddAsync()
