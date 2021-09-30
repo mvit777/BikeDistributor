@@ -49,7 +49,7 @@ It will pick Customers and issue orders randomly while testing the Blazor app us
 ### BikeShop.Bot.CustomerBehaviors ###
 Mainly a dream 'coz I don't know shit of AI beyond simple linear-regression.
 
-This bot should imitate the shopping behavior of 3-4 stereotypized customer behaviors. Ex:
+This bot should be a console-test project and imitate the shopping behavior of 3-4 stereotypized customer behaviors. Ex:
   - low budget: favours special offers and discount over any choice
   - fashion victim: always buy newest or more expensive products
   - customisation maniac: if he can't choose every single detail of the product he/she does not buy
