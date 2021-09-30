@@ -11,14 +11,18 @@ MongoDb is freely hosted by Atlas at https://www.mongodb.com/en/company
 ### BikeDistributor: ###
 A library project to address a specific Business Domain.
 In this case it is a greatly simplified Product Catalog + Chart like app.
-We have a bunch of Domain Models (namely Product, ProductOption, Order, ReceiptFormat, Customer) wrapped in respective MongoEnititesXXX.
+
+We have a bunch of Domain Models (namely Product, ProductOption, Order, ReceiptFormat, Customer) wrapped into respective MongoEnititesXXX.
 MongoEntities are saved into respective Repository<MongoEntityXXX> which are only accessible via specialized MongoServicesXXX which take care of CRUD
   and everything else needed. An implementation of the Repository pattern, in short. Data got written in No-sql db MongoDb and all evolve around the concept 
   of collections.
   
 The library also features some business-domain-specific plumbing and infrasctures that we will see later (maybe) 
 
-MV.Framework:
+### MV.Framework: ###
 This a business-domain-agnostic library.
   It mainly contains Generic Interfaces and BaseClasses (Ex. BaseRepository) with a high potential of being re-usable in BikeDistributor-like projects.
-  Same goes for other plumbing-facilities like DbQueryAsyncProvider, MongoContext, MongoSettings and the like. 
+  Same goes for other plumbing-facilities like DbQueryAsyncProvider, MongoContext, MongoSettings and the like.
+  
+ ### BikeDistributor.Test ###
+ Unit-Test project for the **BikeDistributor** project
