@@ -8,7 +8,7 @@ MongoDb is freely hosted by Atlas at https://www.mongodb.com/en/company
 
 ## Structure of the VS Solution ##
 
-BikeDistributor: 
+### BikeDistributor: ###
 A library project to address a specific Business Domain.
 In this case it is a greatly simplified Product Catalog + Chart like app.
 We have a bunch of Domain Models (namely Product, ProductOption, Order, ReceiptFormat, Customer) wrapped in respective MongoEnititesXXX.
