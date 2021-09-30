@@ -38,4 +38,5 @@ This is a business-domain-agnostic library.
  This application will feature:
   - An admin area to build the Product Catalog and manage Orders and Orders' stats
   - A public Catalogue + Shopping Chart
+  
  I have not yet started to work on this project and I'm probably opting for a serverless blazor app in Net5.0
