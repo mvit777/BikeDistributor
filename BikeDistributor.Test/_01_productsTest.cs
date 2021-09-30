@@ -33,6 +33,7 @@ namespace BikeDistributor.Test
         //private string _mongoUrl = "mongodb://tr_mongouser:oU2KSIlx3O0EPvaU@cluster0.i90tq.mongodb.net";
         private string _mongoDbName = "BikeDb";
         private MongoSettings _mongoSettings = null;
+        private string _servicesNamespace = "BikeDistributor.Infrastructure.services";
         public _01_productsTest()
         {
             //BsonSerializer.RegisterIdGenerator(typeof(string), new StringObjectIdGenerator());
@@ -95,7 +96,7 @@ namespace BikeDistributor.Test
         public async Task _01_03_UsingBikeServiceAddAsync()
         {
             var bike = BikeFactory.Create(GetJBike(0)).GetBike();
-            var bikeService =(MongoBikeService) MongoServiceFactory.GetMongoService(_mongoUrl, _mongoDbName, "MongoBikeService");
+            var bikeService =(MongoBikeService)MongoServiceFactory.GetMongoService(_mongoUrl, _mongoDbName, _servicesNamespace, "MongoBikeService");
             await bikeService.AddBikeAsync(bike);
             MongoEntityBike meb = await bikeService.Get(bike.Model);
             meb.Bike.Brand.Should().Be(bike.Brand);
@@ -110,7 +111,7 @@ namespace BikeDistributor.Test
         {
             int initialPrice = 2350;
             var bike = BikeFactory.Create(GetJBike(1)).GetBike();
-            var bikeService = (MongoBikeService)MongoServiceFactory.GetMongoService(_mongoUrl, _mongoDbName, "MongoBikeService");
+            var bikeService = (MongoBikeService)MongoServiceFactory.GetMongoService(_mongoUrl, _mongoDbName, _servicesNamespace, "MongoBikeService");
             MongoEntityBike meb = await bikeService.AddBikeAsync(bike);
             bike.Price.Should().Equals(initialPrice);
             meb.Bike.Price.Should().Equals(initialPrice);
@@ -134,7 +135,7 @@ namespace BikeDistributor.Test
         public async Task _01_05_UsingBikeOptionServiceAsync()
         {
             BikeOption bo = BikeOption.Create("Golden chain").Create("something to show off", 400);
-            var bos = (MongoBikeOptionService)MongoServiceFactory.GetMongoService(_mongoUrl, _mongoDbName, "MongoBikeOptionService");
+            var bos = (MongoBikeOptionService)MongoServiceFactory.GetMongoService(_mongoUrl, _mongoDbName, _servicesNamespace, "MongoBikeOptionService");
             var mob = (MongoEntityBikeOption) await bos.AddBikeOptionAsync(bo);
             mob.BikeOption.Price.Should().Equals(400);
             mob.BikeOption.Price = 500;

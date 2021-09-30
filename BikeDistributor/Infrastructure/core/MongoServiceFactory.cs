@@ -1,20 +1,25 @@
-﻿using BikeDistributor.Infrastructure.services;
-using MV.Framework.interfaces;
+﻿using MV.Framework.interfaces;
 using MV.Framework.providers;
 using System;
-using System.Collections.Generic;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace BikeDistributor.Infrastructure.core
 {
-    public static class MongoServiceFactory
+    public class MongoServiceFactory
     {
-        public static IMongoService GetMongoService(string mongoUrl, string databaseName, string className)
+        /// <summary>
+        /// 
+        /// 
+        /// </summary>
+        /// <param name="mongoUrl"></param>
+        /// <param name="databaseName"></param>
+        /// <param name="ns">services namespace</param>
+        /// <param name="className"></param>
+        /// <returns>Selected MongoService with appropriate MongoContext</returns>
+        public static IMongoService GetMongoService(string mongoUrl, string databaseName, string ns, string className)
         {
             var context = GetMongoDBContext(mongoUrl, databaseName);
-            string ns = "BikeDistributor.Infrastructure.services";
+            //string ns = "BikeDistributor.Infrastructure.services";
             var myClassType = Type.GetType(String.Format("{0}.{1}", new object[] { ns, className }));
             var parametrizedCtor = myClassType
             .GetConstructors()
