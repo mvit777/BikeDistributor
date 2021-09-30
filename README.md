@@ -10,7 +10,7 @@ MongoDb is freely hosted by Atlas at https://www.mongodb.com/en/company
 
 ### BikeDistributor: ###
 A library project to address a specific Business Domain.
-In this case it is a greatly simplified Product Catalog + Chart like app.
+In this case it is a greatly simplified Product Catalogue + Shopping Chart like app.
 
 We have a bunch of Domain Models (namely Product, ProductOption, Order, ReceiptFormat, Customer) wrapped into respective MongoEnititesXXX.
 
@@ -29,3 +29,13 @@ This is a business-domain-agnostic library.
   
  ### BikeDistributor.Test: ###
  Unit-Test project for the **BikeDistributor** project
+  
+  
+ ## Other related projectes ##
+ 
+ ### BikeShop ###
+ A blazor client for the BikeDistributor library.
+ This application will feature:
+  - An admin area to build the Product Catalog and manage Orders and Orders' stats
+  - A public Catalogue + Shopping Chart
+ I have not yet started to work on this project and I'm probably opting for a serverless blazor app in Net5.0
