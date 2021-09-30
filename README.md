@@ -12,7 +12,7 @@ MongoDb is freely hosted by Atlas at https://www.mongodb.com/en/company
 A library project to address a specific Business Domain.
 In this case it is a greatly simplified Product Catalogue + Shopping Chart like app.
 
-We have a bunch of Domain Models (namely Product, ProductOption, Order, ReceiptFormat, Customer) wrapped into respective MongoEnititesXXX.
+We have a bunch of Domain Models (namely Product, ProductOption, Order, ReceiptFormat, Customer, Discount) wrapped into respective MongoEnititesXXX.
 
 MongoEntities are saved into respective Repository<MongoEntityXXX> which are only accessible via specialized MongoServicesXXX which take care of CRUD
   and everything else needed. An implementation of the Repository pattern, in short. 
@@ -31,7 +31,7 @@ This is a business-domain-agnostic library.
  Unit-Test project for the **BikeDistributor** project
   
   
- ## Other related projectes ##
+ ## Other related projectes at some point in the future ##
  
  ### BikeShop ###
  A blazor client for the BikeDistributor library.
@@ -40,3 +40,23 @@ This is a business-domain-agnostic library.
   - A public Catalogue + Shopping Chart
   
  I have not yet started to work on this project and I'm probably opting for a serverless blazor app in Net5.0
+  
+### BikeShop.Bot.Customer ###
+A selenium web-driver alike set of scripts to create Orders.
+
+It will pick Customers and issue orders randomly while testing the Blazor app user-interface
+  
+### BikeShop.Bot.CustomerBehaviors ###
+Mainly a dream 'coz I don't know shit of AI beyond simple linear-regression.
+
+This bot should imitate the shopping behavior of 3-4 stereotypized customer behaviors. Ex:
+  - low budget: favours special offers and discount over any choice
+  - fashion victim: always buy newest or more expensive products
+  - customisation maniac: if he can't choose every single detail of the product he/she does not buy
+  - etc etc ...
+ Customer behaviors are composed by freely mixable collections of personality traits that act as indicators of a given Customer Behavior Model, so that you 
+  can derive/create also new behaviorus.
+  
+ Customer Behavior Models are trained by BikeShop.Bot.AI.Customer. 
+  
+ 
