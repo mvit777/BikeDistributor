@@ -29,6 +29,25 @@ namespace MV.Framework.providers
 
         }
 
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="connection_string"></param>
+        public MongoDBContext(string connectionString, string dbName)
+        {
+            try
+            {
+                var clientSettings = MongoClientSettings.FromConnectionString(connectionString);
+                _mongoClient = new MongoClient(clientSettings);
+                _db = _mongoClient.GetDatabase(dbName);
+            }
+            catch(Exception ex)
+            {
+                throw new Exception(ex.Message);
+            }
+           
+        }
+
         public IMongoCollection<T> GetCollection<T>(string name)
         {
             return _db.GetCollection<T>(name);

@@ -1,8 +1,10 @@
 ﻿using BikeDistributor.Infrastructure.interfaces;
+using MongoDB.Bson.Serialization.Attributes;
 using System;
 
 namespace BikeDistributor.Domain.Models
 {
+    [BsonDiscriminator("Bike")]
     public class Bike : IBike
     {
         public const int OneThousand = 1000;

@@ -1,4 +1,5 @@
-﻿using BikeDistributor.Infrastructure.interfaces;
+﻿using BikeDistributor.Domain.Models;
+using BikeDistributor.Infrastructure.interfaces;
 using MongoDB.Bson;
 using MongoDB.Bson.Serialization.Attributes;
 using System;
