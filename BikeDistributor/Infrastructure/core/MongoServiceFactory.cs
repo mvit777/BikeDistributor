@@ -35,6 +35,22 @@ namespace BikeDistributor.Infrastructure.core
             }
         }
 
+        public static IMongoService GetMongoService(MongoDBContext context, string fullyQualifiedServiceClassName)
+        {
+            var parametrizedCtor = fullyQualifiedServiceClassName.GetType()
+            .GetConstructors()
+            .FirstOrDefault(c => c.GetParameters().Length > 0);
+            try
+            {
+                var instance = parametrizedCtor.Invoke(new object[] { context });
+                return (IMongoService)instance;
+            }
+            catch (Exception ex)
+            {
+                throw new Exception(ex.Message + " NOT FOUND CLASS IS OF TYPE " + fullyQualifiedServiceClassName);
+            }
+        }
+
         public static MongoDBContext GetMongoDBContext(string mongoUrl, string databaseName)
         {
             var mg = new MongoSettings();
