@@ -39,7 +39,8 @@ This is a business-domain-agnostic library.
   - An admin area to build the Product Catalog and manage Orders and Orders' stats
   - A public Catalogue + Shopping Chart
   
- I have not yet started to work on this project and I'm probably opting for a serverless blazor app in Net5.0
+ I have not yet started to work on this project and I'm probably opting for a serverless blazor app in Net5.0.
+  It will be nothing more than a barebone demo.
   
 ### BikeShop.Bot.Customer.Random ###
 A selenium web-driver alike set of scripts to create Orders.
@@ -53,6 +54,7 @@ This bot should be a console-test project and imitate the shopping behavior of 3
   - low budget: favours special offers and discount over any choice
   - fashion victim: always buy newest or more expensive products
   - customisation maniac: if he can't choose every single detail of the product he/she does not buy
+  - reseller: always places bulk orders
   - etc etc ...
  Customer behaviors are composed by freely mixable collections of personality traits that act as indicators of a given Customer Behavior Model, so that you 
   can derive/create also new behaviorus.
