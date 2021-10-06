@@ -43,6 +43,10 @@ namespace BikeDistributor.Domain.Models
             }
         }
 
+        public BikeVariant()
+        {
+
+        }
 
         /// <summary>
         /// Please use BikeFactory factory rather than 

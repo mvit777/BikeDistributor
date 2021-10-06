@@ -8,6 +8,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using BikeDistributor.Domain.Models;
+using BikeDistributor.Domain.Entities;
 
 namespace BikeDistributor.Infrastructure.core
 {
@@ -63,6 +64,29 @@ namespace BikeDistributor.Infrastructure.core
 
             }
             return bikes;
+        }
+
+        public static List<MongoEntityBike> GetListFromJArrayBikeEntities(string json)
+        {
+            List<MongoEntityBike> mebs = new List<MongoEntityBike>();
+            List<JToken> jtokens = JArray.Parse(json).ToList();
+            foreach (JToken token in jtokens)
+            {
+                if ((bool)token["isStandard"] == true)
+                {
+                    var Bike = JsonConvert.DeserializeObject<Bike>(token["bike"].ToString());
+                    var meb = new MongoEntityBike(Bike);
+                    mebs.Add(meb);
+                }
+                else
+                {
+                    var Bike = JsonConvert.DeserializeObject<BikeVariant>(token["bike"].ToString());
+                    var meb = new MongoEntityBike(Bike);
+                    mebs.Add(meb);
+                }
+
+            }
+            return mebs;
         }
 
         //public string GenerateBsonId(string id)

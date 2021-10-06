@@ -31,6 +31,11 @@ namespace BikeDistributor.Domain.Models
             //Price = price;
             _price = price;
         }
+
+        public Bike()
+        {
+
+        }
         
     }
 }
