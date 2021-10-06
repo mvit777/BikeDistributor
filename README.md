@@ -1,4 +1,4 @@
-# TRChallengeReloadCore3_1
+# BikeDistributor Library
 Trying to evolve my attempt at TrainRoadChallengeV2 into a framework
 
 This is how I'm trying to evolve my attempt at https://github.com/trainerroad/BackendRefactorChallengeV2 into a more generic framework.
