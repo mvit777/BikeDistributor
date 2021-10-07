@@ -35,9 +35,9 @@ namespace BikeDistributor.Infrastructure.core
             }
         }
 
-        public static IMongoService GetMongoService(MongoDBContext context, string fullyQualifiedServiceClassName)
-        {
-            var parametrizedCtor = fullyQualifiedServiceClassName.GetType()
+        public static IMongoService GetMongoService(MongoDBContext context, string className)
+        { 
+            var parametrizedCtor = Type.GetType(String.Format("{0}.{1}", new object[] { context.MongoSettings.servicesNameSpace, className }))
             .GetConstructors()
             .FirstOrDefault(c => c.GetParameters().Length > 0);
             try
@@ -47,7 +47,7 @@ namespace BikeDistributor.Infrastructure.core
             }
             catch (Exception ex)
             {
-                throw new Exception(ex.Message + " NOT FOUND CLASS IS OF TYPE " + fullyQualifiedServiceClassName);
+                throw new Exception(ex.Message + " NOT FOUND CLASS IS OF TYPE " + className);
             }
         }
 

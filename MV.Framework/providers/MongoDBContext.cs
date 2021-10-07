@@ -14,10 +14,13 @@ namespace MV.Framework.providers
         private IMongoDatabase _db { get; set; }
         private MongoClient _mongoClient { get; set; }
         public IClientSessionHandle Session { get; set; }
+        public MongoSettings MongoSettings { get; set; }
+
         public MongoDBContext(MongoSettings configuration)
         {
             try
             {
+                MongoSettings = configuration;
                 _mongoClient = new MongoClient(configuration.Connection);
                 _db = _mongoClient.GetDatabase(configuration.DatabaseName);
             }
@@ -30,7 +33,7 @@ namespace MV.Framework.providers
         }
 
         /// <summary>
-        /// 
+        /// todo remove as not needed
         /// </summary>
         /// <param name="connection_string"></param>
         public MongoDBContext(string connectionString, string dbName)

@@ -11,6 +11,7 @@ using Microsoft.Extensions.Options;
 using MongoDB.Bson.Serialization;
 using MongoDB.Bson.Serialization.IdGenerators;
 using MV.Framework;
+using MV.Framework.interfaces;
 using MV.Framework.providers;
 using Newtonsoft.Json.Linq;
 using System;
@@ -37,6 +38,8 @@ namespace BikeDistributor.Test
         public _01_productsTest()
         {
             //BsonSerializer.RegisterIdGenerator(typeof(string), new StringObjectIdGenerator());
+            BsonClassMap.RegisterClassMap<Bike>();
+            BsonClassMap.RegisterClassMap<BikeVariant>();
             _config = new TestConfig(_productTestsConfigFile);
             _mongoSettings = new MongoSettings();
             _mongoSettings.Connection = _mongoUrl;
@@ -53,6 +56,18 @@ namespace BikeDistributor.Test
         private JObject GetJBike(int index)
         {
             return _config.GetJObject("bikes", index);
+        }
+
+        [Fact]
+        public async Task _01_00_TestLibraryConfigAsync()
+        {
+            var libConfig = new Config(@".\Fixtures\libConfig.json");
+            var mongosettings = libConfig.GetClassObject<MongoSettings>("Mongo");
+            var mongoContext = new MongoDBContext(mongosettings);
+            //var selectedService = settings.Services.
+            var bikeService = (MongoBikeService)MongoServiceFactory.GetMongoService(mongoContext, "MongoBikeService");
+            var bikes = await bikeService.Get();
+            bikes.Count.Should().BeOneOf(new int[] { 2 });
         }
 
         [Fact]

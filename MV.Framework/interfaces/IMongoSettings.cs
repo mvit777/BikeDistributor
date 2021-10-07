@@ -1,14 +1,11 @@
-﻿using MongoDB.Driver;
-using System;
+﻿using System;
 using System.Collections;
 using System.Collections.Generic;
-using System.Linq;
 using System.Text;
-using System.Threading.Tasks;
 
-namespace MV.Framework.providers
+namespace MV.Framework.interfaces
 {
-    public class MongoSettings
+    public interface IMongoSettings
     {
         public string Connection { get; set; }
         public string DatabaseName { get; set; }
