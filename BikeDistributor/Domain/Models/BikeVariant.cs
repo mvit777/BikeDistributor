@@ -21,7 +21,7 @@ namespace BikeDistributor.Domain.Models
             {
                 if (_priceNeedsUpdate)
                 {
-                    this.RecalculatePrice();
+                    this._RecalculatePrice();
                 }
                 return _price;
             }
@@ -39,7 +39,7 @@ namespace BikeDistributor.Domain.Models
             {
                 _SelectedOptions = value;
                 this._priceNeedsUpdate = true;
-                this.RecalculatePrice();
+                this._RecalculatePrice();
             }
         }
 
@@ -62,8 +62,9 @@ namespace BikeDistributor.Domain.Models
             {
                 this._SelectedOptions = options;
             }
-            this.RecalculatePrice();//but make it available for the outside and options price if needed
+            this._RecalculatePrice();//but make it available for the outside and options price if needed
         }
+
 
 
         /// <summary>
@@ -86,7 +87,7 @@ namespace BikeDistributor.Domain.Models
                 _SelectedOptions.Add(option);
             }
 
-            _price = RecalculatePrice();//probably to be removed as priceNeedsUpdate is already flagged
+            _price = _RecalculatePrice();//probably to be removed as priceNeedsUpdate is already flagged
         }
         public void RemoveOption(string name)
         {
@@ -138,7 +139,7 @@ namespace BikeDistributor.Domain.Models
         /// we update total price taking into account options total price
         /// </summary>
         /// <returns>int total price for (bike)variant</returns>
-        private int RecalculatePrice()
+        private  int _RecalculatePrice()
         {
             //in the event of a double unwanted call
             if (this._priceNeedsUpdate == false)
@@ -152,6 +153,11 @@ namespace BikeDistributor.Domain.Models
             _priceNeedsUpdate = false;
 
             return _price;
+        }
+        public override void RecalculatePrice()
+        {
+            this._priceNeedsUpdate = true;
+            _RecalculatePrice();
         }
     }
 }

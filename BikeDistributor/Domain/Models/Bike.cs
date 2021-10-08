@@ -36,6 +36,9 @@ namespace BikeDistributor.Domain.Models
         {
 
         }
-        
+        public virtual void RecalculatePrice()
+        {
+            _price = BasePrice;
+        }
     }
 }

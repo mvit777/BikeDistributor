@@ -75,12 +75,15 @@ namespace BikeDistributor.Infrastructure.core
                 if ((bool)token["isStandard"] == true)
                 {
                     var Bike = JsonConvert.DeserializeObject<Bike>(token["bike"].ToString());
+                    Bike.RecalculatePrice();
                     var meb = new MongoEntityBike(Bike);
                     mebs.Add(meb);
                 }
                 else
                 {
+                    //TODO: DESERIALZIE BikeOptions and re-add to bike
                     var Bike = JsonConvert.DeserializeObject<BikeVariant>(token["bike"].ToString());
+                    Bike.RecalculatePrice();
                     var meb = new MongoEntityBike(Bike);
                     mebs.Add(meb);
                 }

@@ -5,12 +5,15 @@ using System.Text;
 
 namespace MV.Framework.providers
 {
+    /// <summary>
+    /// Another class not usable into blazor wasm
+    /// </summary>
     public class BaseRestClient
     {
         private string _baseUrl;
         private IRestClient _client;
         /// <summary>
-        /// TODO: ADD OVERRIED WITH AUTH WHEN CAPABILITY (OR MAYBE LET IT FOR DERIVEDED CLASSES)
+        /// TODO: ADD OVERRIDE WITH AUTH WHEN CAPABILITY (OR MAYBE LET IT FOR DERIVED CLASSES)
         /// https://restsharp.dev/usage/
         /// </summary>
         /// <param name="baseUrl"></param>
@@ -20,7 +23,13 @@ namespace MV.Framework.providers
             _client = new RestClient(_baseUrl);
         }
 
-        
+        public IRestResponse Get(string url)
+        {
+            var request = new RestRequest(url, DataFormat.Json);
+            var response = _client.Get(request);
+
+            return response;
+        }
 
         public T Execute<T>(RestRequest request) where T : new()
         {
