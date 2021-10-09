@@ -1,5 +1,6 @@
 ﻿using BikeDistributor.Domain;
 using BikeDistributor.Domain.Entities;
+using BikeDistributor.Domain.Models;
 using BikeDistributor.Infrastructure.interfaces;
 using BikeDistributor.Infrastructure.repositories;
 using MV.Framework.interfaces;
@@ -48,6 +49,14 @@ namespace BikeDistributor.Infrastructure.services
         {
 
             obj.TotalPrice = obj.Bike.Price;//ok
+            if (obj.Bike.isStandard == false)
+            {
+                var bv = (BikeVariant)obj.Bike;
+                obj.SelectedOptions = bv.SelectedOptions;
+                bv.RecalculatePrice();
+                obj.TotalPrice = bv.Price;//ok
+            }
+            
             _bikeRepo.Update(obj);
 
             return obj;

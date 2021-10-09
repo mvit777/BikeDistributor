@@ -40,6 +40,7 @@ namespace BikeDistributor.Test
             //BsonSerializer.RegisterIdGenerator(typeof(string), new StringObjectIdGenerator());
             BsonClassMap.RegisterClassMap<Bike>();
             BsonClassMap.RegisterClassMap<BikeVariant>();
+            BsonClassMap.RegisterClassMap<BikeOption>();
             _config = new TestConfig(_productTestsConfigFile);
             _mongoSettings = new MongoSettings();
             _mongoSettings.Connection = _mongoUrl;

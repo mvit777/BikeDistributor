@@ -21,6 +21,7 @@ namespace BikeDistributor.Domain.Entities
         public string Id { get; set; }
         public int TotalPrice { get; set; }
         public bool IsStandard { get; set; }
+        public List<BikeOption> SelectedOptions { get; set; }
 
         //[BsonSerializer(typeof(CustomBsonSerializer))]
         //[BsonElement("Bike")]
@@ -29,8 +30,19 @@ namespace BikeDistributor.Domain.Entities
         {
             Bike = bike;
             Id = Bike.Model;
-            TotalPrice = Bike.Price;
+           
             IsStandard = Bike.isStandard;
+            if (IsStandard == false)
+            {
+                var bv = (BikeVariant)bike;
+                SelectedOptions = bv.SelectedOptions;
+                bv.RecalculatePrice();
+                TotalPrice = bv.Price;
+            }
+            else
+            {
+                TotalPrice = Bike.Price;
+            }
         }
 
         public MongoEntityBike()
