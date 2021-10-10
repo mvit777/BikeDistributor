@@ -6,14 +6,14 @@ using System.IO;
 namespace MV.Framework
 {
 
-    public class TestConfig
+    public class BaseConfig
     {
         protected string _configFile;
         protected string _rawJson;
         protected string _rootElement = "tests";
         private string _currentTest;
 
-        public TestConfig(string configFile)
+        public BaseConfig(string configFile)
         {
             _configFile = configFile;
             _Load();

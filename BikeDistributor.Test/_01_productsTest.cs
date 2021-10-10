@@ -23,7 +23,7 @@ namespace BikeDistributor.Test
 {
     public class _01_productsTest
     {
-        private TestConfig _config;
+        private BaseConfig _config;
         private string _productTestsConfigFile = @".\Fixtures\ProductTests.json";
         //private string _mongoUrl = "mongodb+srv://tr_mongouser:oU2KSIlx3O0EPvaU@cluster0.i90tq.mongodb.net/BikeDb?retryWrites=true&w=majority";
         private string _mongoUrl = "mongodb+srv://tr_mongouser2:jX9lnzMHo80P39fW@cluster0.i90tq.mongodb.net/BikeDb?retryWrites=true&w=majority";
@@ -41,7 +41,7 @@ namespace BikeDistributor.Test
             BsonClassMap.RegisterClassMap<Bike>();
             BsonClassMap.RegisterClassMap<BikeVariant>();
             BsonClassMap.RegisterClassMap<BikeOption>();
-            _config = new TestConfig(_productTestsConfigFile);
+            _config = new BaseConfig(_productTestsConfigFile);
             _mongoSettings = new MongoSettings();
             _mongoSettings.Connection = _mongoUrl;
             _mongoSettings.DatabaseName = _mongoDbName;

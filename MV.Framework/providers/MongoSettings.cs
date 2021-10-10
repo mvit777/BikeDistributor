@@ -14,5 +14,6 @@ namespace MV.Framework.providers
         public string DatabaseName { get; set; }
         public string servicesNameSpace { get; set; }
         public ArrayList Services { get; set; }
+        public ArrayList BsonTypes { get; set; }
     }
 }

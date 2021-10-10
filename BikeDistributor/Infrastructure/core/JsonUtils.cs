@@ -66,26 +66,26 @@ namespace BikeDistributor.Infrastructure.core
             return bikes;
         }
 
-        public static List<MongoEntityBike> GetListFromJArrayBikeEntities(string json)
+        public static List<MongoEntityBike> DeserializeMongoEntityBikeList(string json)
         {
             List<MongoEntityBike> mebs = new List<MongoEntityBike>();
             List<JToken> jtokens = JArray.Parse(json).ToList();
             foreach (JToken token in jtokens)
             {
-                MongoEntityBike meb;
-                if ((bool)token["isStandard"] == true)
-                {
-                    meb = DeserializeBikeEntity(token);
-                    
-                }
-                else
-                {
-                    meb = DeserializeBikeVariantEntity(token);
-                }
+                MongoEntityBike meb = DeserializeIBikeEntity(token);
                 mebs.Add(meb);
 
             }
             return mebs;
+        }
+
+        public static MongoEntityBike DeserializeIBikeEntity(JToken token)
+        {
+            if ((bool)token["isStandard"] == true)
+            {
+                return DeserializeBikeEntity(token);
+            }
+            return DeserializeBikeVariantEntity(token);
         }
 
         public static MongoEntityBike DeserializeBikeEntity(JToken token)
@@ -123,7 +123,7 @@ namespace BikeDistributor.Infrastructure.core
 
     //https://stackoverflow.com/questions/67044973/using-newtonsoft-json-custom-converters-to-read-json-with-different-input
     #region "dead code"
-    
+
     //class BikeVariantConverter : JsonConverter
     //{
     //    public override bool CanConvert(Type objectType)
@@ -160,7 +160,7 @@ namespace BikeDistributor.Infrastructure.core
 
     //        serializer.Populate(obj.CreateReader(), bv);
 
-            
+
     //        return bv;
     //    }
 

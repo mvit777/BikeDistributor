@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace BikeDistributor.Infrastructure.core
 {
-    public class Config : MV.Framework.TestConfig
+    public class Config : MV.Framework.BaseConfig
     {
         protected new string _rootElement = "Settings";
 
