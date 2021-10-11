@@ -9,6 +9,8 @@ namespace BikeDistributor.Infrastructure.core
 {
     public class Config : MV.Framework.BaseConfig
     {
+        public MongoSettings DefaultMongoSettings { get; set; }
+
         protected new string _rootElement = "Settings";
 
         public Config(string jsonFilePath) : base(jsonFilePath)
@@ -19,6 +21,11 @@ namespace BikeDistributor.Infrastructure.core
         public MongoSettings LoadMongoSettings(int index)
         {
             return this.GetClassObject<MongoSettings>("Mongo", index);
+        }
+
+        public string GetMongoServiceIdentity(string serviceName)
+        {
+            return DefaultMongoSettings.servicesNameSpace + "." + serviceName + ", " + DefaultMongoSettings.servicesDll;
         }
     }
 }

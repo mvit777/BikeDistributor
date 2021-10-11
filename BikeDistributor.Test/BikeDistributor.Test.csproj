@@ -26,9 +26,6 @@
   </ItemGroup>
 
   <ItemGroup>
-    <None Update="Fixtures\libConfig.json">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </None>
     <None Update="Fixtures\output\_002_002_expectedOutput.txt">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
