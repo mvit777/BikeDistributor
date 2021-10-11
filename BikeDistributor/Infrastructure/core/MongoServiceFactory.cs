@@ -47,7 +47,7 @@ namespace BikeDistributor.Infrastructure.core
             }
             catch (Exception ex)
             {
-                throw new Exception(ex.Message + " NOT FOUND CLASS IS OF TYPE " + className);
+                throw new Exception(ex.Message + " NOT FOUND CLASS IS OF TYPE " + className + " namespace is " + context.MongoSettings.servicesNameSpace);
             }
         }
 

@@ -5,18 +5,25 @@ using BikeDistributor.Infrastructure.interfaces;
 using BikeDistributor.Infrastructure.repositories;
 using MV.Framework.interfaces;
 using MV.Framework.providers;
+using Newtonsoft.Json;
 using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
 namespace BikeDistributor.Infrastructure.services
 {
+    [Serializable]
     public class MongoBikeService : IMongoService
     {
+        public MongoDBContext Context { get => _context; set => _context=value; }
+        
         private MongoDBContext _context;
+        
         private BikeRepository _bikeRepo;
+
         
         /// <summary>
         /// TODO: do this service work only in terms of bikes and not meb. See addAsync for better explanation
@@ -26,6 +33,12 @@ namespace BikeDistributor.Infrastructure.services
         {
             _context = context;
             _bikeRepo = new BikeRepository(_context);
+        }
+
+        [JsonConstructor]
+        public MongoBikeService(string context, string serviceName)
+        {
+            File.WriteAllText(@"c:\temp\context_as_string", context);
         }
 
         public async Task<MongoEntityBike> AddBikeAsync(IBike bike)

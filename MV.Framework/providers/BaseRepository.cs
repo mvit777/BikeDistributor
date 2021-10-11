@@ -1,6 +1,7 @@
 ﻿using MongoDB.Bson;
 using MongoDB.Driver;
 using MV.Framework.interfaces;
+using Newtonsoft.Json;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -11,7 +12,9 @@ namespace MV.Framework.providers
 {
     public abstract class BaseRepository<TEntity> : IBaseRepository<TEntity> where TEntity : class
     {
+        [JsonProperty]
         protected readonly IMongoDBContext _mongoContext;
+        [JsonProperty]
         protected IMongoCollection<TEntity> _dbCollection;
 
         protected BaseRepository(IMongoDBContext context)

@@ -32,9 +32,9 @@ namespace BikeDistributor.Infrastructure.services
             return await _bikeOptionRepo.Get(option.Name, true);
         }
 
-        public async Task<List<MongoEntityBike>> Get()
+        public async Task<List<MongoEntityBikeOption>> Get()
         {
-            return (List<MongoEntityBike>)await _bikeOptionRepo.Get();
+            return (List<MongoEntityBikeOption>)await _bikeOptionRepo.Get();
         }
         public async Task<MongoEntityBikeOption> Get(string id)
         {
