@@ -34,7 +34,7 @@ This is a business-domain-agnostic library.
  ## Other related projectes at some point in the future ##
  
  ### [BikeShop](https://github.com/mvit777/BikeShop) ###
- A [blazor demo client]((https://github.com/mvit777/BikeShop) for the BikeDistributor library.
+ A [blazor demo client](https://github.com/mvit777/BikeShop) for the BikeDistributor library.
  This application will feature:
   - An admin area to build the Product Catalog and manage Orders and Orders' stats
   - A public Catalogue + Shopping Chart
