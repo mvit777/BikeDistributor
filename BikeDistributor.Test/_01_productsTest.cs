@@ -26,20 +26,24 @@ namespace BikeDistributor.Test
 
         private Config _configWS;
         private Config _blazorConfig;
-        private Config _testProductConfig;
+        private BaseConfig _testProductConfig;
         private HttpClient _restClient;
         private bool _BsonTypesRegistered = false;
         //private string _baseUrl = "http://localhost:8021";
         public _01_productsTest()
         {
             //BsonSerializer.RegisterIdGenerator(typeof(string), new StringObjectIdGenerator());
-            BsonClassMap.RegisterClassMap<Bike>();
-            BsonClassMap.RegisterClassMap<BikeVariant>();
-            BsonClassMap.RegisterClassMap<BikeOption>();
-            _testProductConfig = new Config(_productTestsConfigFile);
+            if (!BsonClassMap.IsClassMapRegistered(typeof(Bike)))
+            {
+                BsonClassMap.RegisterClassMap<Bike>();
+                BsonClassMap.RegisterClassMap<BikeVariant>();
+                BsonClassMap.RegisterClassMap<BikeOption>();
+            }
+            _BsonTypesRegistered = true;
+            _testProductConfig = new BaseConfig(_productTestsConfigFile);
             _configWS = GetWSConfig();
-            _configWS.GetClassObject<MongoSettings>("Mongo");
-            _mongoSettings = _configWS.DefaultMongoSettings;
+            _mongoSettings = _configWS.GetClassObject<MongoSettings>("Mongo");
+            _configWS.DefaultMongoSettings = _mongoSettings;
             _mongoSettings.DatabaseName = _mongoDbNameTest;
         }
 
@@ -109,8 +113,10 @@ namespace BikeDistributor.Test
         public async Task _01_03_UsingBikeServiceAddAsync()
         {
             var bike = BikeFactory.Create(GetJBike(0)).GetBike();
+            _mongoSettings.DatabaseName.Should().Be(_mongoDbNameTest);
             var mongoContext = new MongoDBContext(_mongoSettings);
             var bikeService = (MongoBikeService)MongoServiceFactory.GetMongoService(mongoContext, "MongoBikeService");
+            bikeService.Delete(bike.Model);
             await bikeService.AddBikeAsync(bike);
             MongoEntityBike meb = await bikeService.Get(bike.Model);
             meb.Bike.Brand.Should().Be(bike.Brand);
@@ -127,6 +133,7 @@ namespace BikeDistributor.Test
             var bike = BikeFactory.Create(GetJBike(1)).GetBike();
             var mongoContext = new MongoDBContext(_mongoSettings);
             var bikeService = (MongoBikeService)MongoServiceFactory.GetMongoService(mongoContext, "MongoBikeService");
+            bikeService.Delete(bike.Model);
             MongoEntityBike meb = await bikeService.AddBikeAsync(bike);
             bike.Price.Should().Equals(initialPrice);
             meb.Bike.Price.Should().Equals(initialPrice);
@@ -151,7 +158,8 @@ namespace BikeDistributor.Test
         {
             BikeOption bo = BikeOption.Create("Golden chain").Create("something to show off", 400);
             var mongoContext = new MongoDBContext(_mongoSettings);
-            var bos = (MongoBikeOptionService)MongoServiceFactory.GetMongoService(mongoContext, "MongoBikeOptionService");        
+            var bos = (MongoBikeOptionService)MongoServiceFactory.GetMongoService(mongoContext, "MongoBikeOptionService");
+            bos.Delete(bo.Name);
             var mob = (MongoEntityBikeOption)await bos.AddBikeOptionAsync(bo);
             mob.BikeOption.Price.Should().Equals(400);
             mob.BikeOption.Price = 500;
