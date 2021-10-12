@@ -1,4 +1,4 @@
-# BikeDistributor Library
+# BikeDistributor Library #
 Trying to evolve my attempt at TrainRoadChallengeV2 into a framework
 
 This is how I'm trying to evolve my attempt at https://github.com/trainerroad/BackendRefactorChallengeV2 into a more generic framework.
@@ -60,5 +60,7 @@ This bot should be a console-test project and imitate the shopping behavior of 3
   can derive/create also new behaviorus.
   
  Customer Behavior Models are trained by BikeShop.Bot.Customer.AI 
-  
+ 
+ ## Related and inspiring links ##
+ 
  
