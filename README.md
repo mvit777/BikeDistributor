@@ -66,4 +66,5 @@ This bot should be a console-test project and imitate the shopping behavior of 3
  
  ## Related and inspiring links ##
  
- 
+ - [NoSQL – MongoDB Repository Implementation in .NET Core with Unit Testing example](https://www.thecodebuzz.com/mongodb-repository-implementation-unit-testing-net-core-example/) This TheCodebuzz's article acted like a firestarter and was something more than just inspiring, in fact I "stole" a lot of code from there.
+ It is coincise, informative and features very nicely crafted code.
