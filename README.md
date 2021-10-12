@@ -32,6 +32,9 @@ This is a business-domain-agnostic library.
   
   
  ## Other related projectes at some point in the future ##
+ [NoSQL – MongoDB Repository Implementation in .NET Core with Unit Testing example](https://www.thecodebuzz.com/mongodb-repository-implementation-unit-testing-net-core-example/)
+ Sounds familiar? Yes, that acted as the firestarter and something more than simply inspiring form me, in fact I "stole" a lot of code from there. 
+  The article is truly a must-read. It is coincise, informative and features fine crafted code.
  
  ### [BikeShop](https://github.com/mvit777/BikeShop) ###
  A [blazor demo client](https://github.com/mvit777/BikeShop) for the BikeDistributor library.
