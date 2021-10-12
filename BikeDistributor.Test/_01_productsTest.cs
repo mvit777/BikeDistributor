@@ -70,7 +70,7 @@ namespace BikeDistributor.Test
         }
 
         [Fact]
-        public void _01_01_GetProduct()
+        public void _01_01_GetProductFromFile()
         {
             var bike = (Bike)BikeFactory.Create(GetJBike(0)).GetBike();
             bike.isStandard.Should().Be(true);

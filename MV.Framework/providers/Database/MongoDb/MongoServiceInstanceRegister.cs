@@ -4,11 +4,10 @@ using System.Collections.Generic;
 using System.Text;
 using Newtonsoft.Json;
 using System.IO;
-using BikeDistributor.Infrastructure.services;
 using MV.Framework.providers;
 using Newtonsoft.Json.Linq;
 
-namespace BikeDistributor.Infrastructure.core
+namespace MV.Framework.providers
 {
     public class MongoServiceInstanceRegister : IServiceRegister
     {
