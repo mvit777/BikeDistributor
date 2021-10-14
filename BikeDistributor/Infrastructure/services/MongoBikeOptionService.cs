@@ -5,16 +5,19 @@ using System.Threading.Tasks;
 using BikeDistributor.Infrastructure.repositories;
 using BikeDistributor.Infrastructure.interfaces;
 using BikeDistributor.Domain.Entities;
+using System;
 
 namespace BikeDistributor.Infrastructure.services
 {
+    [Serializable]
     public class MongoBikeOptionService : IMongoService
     {
+        public MongoDBContext Context { get => _context; set => _context = value; }
         private MongoDBContext _context;
         private BikeOptionRepository _bikeOptionRepo;
 
         /// <summary>
-        /// TODO: do this service work only in terms of bikes and not meb. See addAsync for better explanation
+        /// 
         /// </summary>
         /// <param name="context"></param>
         public MongoBikeOptionService(MongoDBContext context)

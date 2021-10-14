@@ -26,7 +26,7 @@ namespace BikeDistributor.Infrastructure.services
 
         
         /// <summary>
-        /// TODO: do this service work only in terms of bikes and not meb. See addAsync for better explanation
+        /// 
         /// </summary>
         /// <param name="context"></param>
         public MongoBikeService(MongoDBContext context)

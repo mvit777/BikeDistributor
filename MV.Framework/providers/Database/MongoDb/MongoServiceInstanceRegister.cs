@@ -21,6 +21,7 @@ namespace MV.Framework.providers
             }
             //var js = new JsonSerializerSettings() { NullValueHandling = NullValueHandling.Ignore, Formatting = Formatting.Indented };
             string obj = JsonConvert.SerializeObject(instance);
+            
             if (Register.ContainsKey(key)==false)
             {
                 Register.Add(key, obj);
