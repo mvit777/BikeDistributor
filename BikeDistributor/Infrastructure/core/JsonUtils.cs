@@ -66,6 +66,25 @@ namespace BikeDistributor.Infrastructure.core
             return bikes;
         }
 
+        public static List<MongoEntityBikeOption> DeserializeMongoEntityBikeOptionList(string json)
+        {
+            List<MongoEntityBikeOption> mebs = new List<MongoEntityBikeOption>();
+            List<JToken> jtokens = JArray.Parse(json).ToList();
+            foreach (JToken token in jtokens)
+            {
+                MongoEntityBikeOption mebo = DeserializeIBikeOptionEntity(token);
+                mebs.Add(mebo);
+
+            }
+            return mebs;
+        }
+
+        private static MongoEntityBikeOption DeserializeIBikeOptionEntity(JToken token)
+        {
+            var BikeOption = JsonConvert.DeserializeObject<BikeOption>(token["bikeOption"].ToString());
+            return new MongoEntityBikeOption(BikeOption);
+        }
+
         public static List<MongoEntityBike> DeserializeMongoEntityBikeList(string json)
         {
             List<MongoEntityBike> mebs = new List<MongoEntityBike>();
@@ -112,6 +131,38 @@ namespace BikeDistributor.Infrastructure.core
             //meb.IsStandard = false;
             //meb.TotalPrice = (int)token["totalPrice"];
             return meb;
+        }
+        /// <summary>
+        /// https://stackoverflow.com/questions/3445784/copy-the-property-values-to-another-object-with-c-sharp
+        /// </summary>
+        /// <typeparam name="TSource"></typeparam>
+        /// <typeparam name="TTarget"></typeparam>
+        /// <param name="sourceItem"></param>
+        /// <returns></returns>
+        public static TTarget Convert<TSource, TTarget>(TSource sourceItem, IEnumerable<string> propNamesToIgnore = null)
+        {
+            if (null == sourceItem)
+            {
+                return default(TTarget);
+            }
+
+            var deserializeSettings = new JsonSerializerSettings { ObjectCreationHandling = ObjectCreationHandling.Replace, };
+
+            if(propNamesToIgnore == null)
+            {
+                var serializedObject = JsonConvert.SerializeObject(sourceItem, deserializeSettings);
+
+                return JsonConvert.DeserializeObject<TTarget>(serializedObject);
+            }
+            else
+            {
+                var serializedObject = JsonConvert.SerializeObject(sourceItem, new JsonSerializerSettings()
+                { ContractResolver = new IgnorePropertiesResolver(propNamesToIgnore) });
+
+                return JsonConvert.DeserializeObject<TTarget>(serializedObject);
+            }
+            
+            
         }
 
         //public string GenerateBsonId(string id)

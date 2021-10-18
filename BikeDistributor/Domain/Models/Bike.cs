@@ -16,6 +16,7 @@ namespace BikeDistributor.Domain.Models
         public string Model { get; set; }
         public virtual int Price { get => _price; }
         public virtual int BasePrice { get; set; } = 0;
+        public virtual string Description { get; set; }
 
         public virtual bool isStandard { get => true; }
 

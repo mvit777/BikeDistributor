@@ -12,7 +12,7 @@ namespace BikeDistributor.Infrastructure.services
     [Serializable]
     public class MongoBikeOptionService : IMongoService
     {
-        public MongoDBContext Context { get => _context; set => _context = value; }
+        public MongoDBContext Context { get => _context; set => _context=value; }
         private MongoDBContext _context;
         private BikeOptionRepository _bikeOptionRepo;
 

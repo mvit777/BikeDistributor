@@ -13,5 +13,6 @@ namespace BikeDistributor.Infrastructure.interfaces
         int Price { get; }
         int BasePrice { get; set; }
         bool isStandard { get;  }
+        string Description { get; set; }
     }
 }

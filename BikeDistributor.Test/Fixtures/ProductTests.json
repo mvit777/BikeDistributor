@@ -7,13 +7,15 @@
           "Model": "Defy 1",
           "Brand": "Giant",
           "Price": 1000,
-          "isStandard": true
+          "isStandard": true,
+          "Description":  "some description"
         },
         {
           "Model": "Defy 1 SE",
           "Brand": "Giant",
           "Price": 1000,
           "isStandard": false,
+          "Description": "some description",
           "options": [
             {
               "Name": "Color",
@@ -117,7 +119,8 @@
               "Brand": "Giant",
               "Price": 1000,
               "isStandard": true,
-              "Quantity": 10
+              "Quantity": 10,
+              "Description": "some description"
             },
             {
               "Model": "Defy 1 SE",
@@ -125,6 +128,7 @@
               "Price": 1000,
               "isStandard": false,
               "Quantity": 10,
+              "Description": "some description",
               "options": [
                 {
                   "Name": "Color",
@@ -162,7 +166,8 @@
               "Brand": "Giant",
               "Price": 1000,
               "isStandard": true,
-              "Quantity": 20
+              "Quantity": 20,
+              "Description": "some description"
             }
           ]
         }
