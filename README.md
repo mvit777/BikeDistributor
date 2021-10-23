@@ -42,6 +42,10 @@ This is a business-domain-agnostic library.
  A wasm blazor spa app in Net5.0.
   It will be nothing more than a barebone demo.
   
+ ### [BikeShop.BlazorComponents](https://github.com/mvit777/BikeShop/tree/master/BikeShop.BlazorComponents)
+  A sub-project of BikeShop, is just a thin wrapper around Bootstrap components
+ 
+  
 ### BikeShop.Bot.Customer.Random ###
 A selenium web-driver alike set of scripts to create Orders.
 
