@@ -45,6 +45,8 @@ This is a business-domain-agnostic library.
  ### [BikeShop.BlazorComponents](https://github.com/mvit777/BikeShop/tree/master/BikeShop.BlazorComponents)
   A sub-project of BikeShop, is just a thin wrapper around Bootstrap components
  
+### [BikeShopWS](https://github.com/mvit777/BikeShop/blob/master/BikeShopWS/gRPC.md) 
+  The glue webservice supporting both REST and gRPC
   
 ### BikeShop.Bot.Customer.Random ###
 A selenium web-driver alike set of scripts to create Orders.
