@@ -39,8 +39,14 @@ This is a business-domain-agnostic library.
   - An admin area to build the Product Catalog and manage Orders and Orders' stats
   - A public Catalogue + Shopping Chart
   
- I have not yet started to work on this project and I'm probably opting for a serverless blazor app in Net5.0.
+ A wasm blazor spa app in Net5.0.
   It will be nothing more than a barebone demo.
+  
+ ### [BikeShop.BlazorComponents](https://github.com/mvit777/BikeShop/tree/master/BikeShop.BlazorComponents)
+  A sub-project of BikeShop, is just a thin wrapper around Bootstrap components
+ 
+### [BikeShopWS](https://github.com/mvit777/BikeShop/blob/master/BikeShopWS/gRPC.md) 
+  The glue webservice supporting both REST and gRPC
   
 ### BikeShop.Bot.Customer.Random ###
 A selenium web-driver alike set of scripts to create Orders.
@@ -66,3 +72,4 @@ This bot should be a console-test project and imitate the shopping behavior of 3
  - [NoSQL – MongoDB Repository Implementation in .NET Core with Unit Testing example](https://www.thecodebuzz.com/mongodb-repository-implementation-unit-testing-net-core-example/)
  Sounds familiar? Yes, that acted as the firestarter and something more than simply inspiring for me, in fact I "stole" a lot of code from there.
   This TheCodebuzz's article is truly a must-read. It is coincise, informative and features fine crafted code.
+ - [MongoDB resources](https://www.mongodb.com/resources)
