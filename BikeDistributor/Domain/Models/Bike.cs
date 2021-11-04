@@ -1,6 +1,7 @@
 ﻿using BikeDistributor.Infrastructure.interfaces;
 using MongoDB.Bson.Serialization.Attributes;
 using System;
+using System.Collections.Generic;
 
 namespace BikeDistributor.Domain.Models
 {
@@ -19,6 +20,7 @@ namespace BikeDistributor.Domain.Models
         public virtual string Description { get; set; }
 
         public virtual bool isStandard { get => true; }
+        public virtual List<BikeOption> SelectedOptions { get; set; }
 
         public Bike(string brand, string model, int price)
         {

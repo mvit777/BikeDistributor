@@ -26,7 +26,7 @@ namespace MV.Framework.providers
         {
             try
             {
-                File.WriteAllText(@"c:\temp\configuration.txt",JsonConvert.SerializeObject(configuration));
+                //File.WriteAllText(@"c:\temp\configuration.txt",JsonConvert.SerializeObject(configuration));
                 MongoSettings = configuration;
                 _mongoClient = new MongoClient(MongoSettings.Connection);
                 _db = _mongoClient.GetDatabase(MongoSettings.DatabaseName);

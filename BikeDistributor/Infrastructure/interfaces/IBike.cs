@@ -1,4 +1,5 @@
-﻿using System;
+﻿using BikeDistributor.Domain.Models;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -14,5 +15,6 @@ namespace BikeDistributor.Infrastructure.interfaces
         int BasePrice { get; set; }
         bool isStandard { get;  }
         string Description { get; set; }
+        List<BikeOption> SelectedOptions { get; set; }
     }
 }

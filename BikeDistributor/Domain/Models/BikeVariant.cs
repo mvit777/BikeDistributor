@@ -29,7 +29,7 @@ namespace BikeDistributor.Domain.Models
         }
         public override bool isStandard => false;
 
-        public List<BikeOption> SelectedOptions
+        public override List<BikeOption> SelectedOptions
         {
             get
             {

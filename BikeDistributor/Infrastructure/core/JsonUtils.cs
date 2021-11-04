@@ -9,6 +9,7 @@ using System.Text;
 using System.Threading.Tasks;
 using BikeDistributor.Domain.Models;
 using BikeDistributor.Domain.Entities;
+using BikeDistributor.Infrastructure.factories;
 
 namespace BikeDistributor.Infrastructure.core
 {
@@ -66,6 +67,20 @@ namespace BikeDistributor.Infrastructure.core
             return bikes;
         }
 
+        public static IBike DeserializeIBikeModel(string json)
+        {
+            JObject o = JObject.Parse(json);
+            IBike b = null;
+            if (o.Value<bool>("isStandard") == true)
+            {
+                b = JsonConvert.DeserializeObject<Bike>(o.ToString());
+            }
+            else
+            {
+                b = JsonConvert.DeserializeObject<BikeVariant>(o.ToString());
+            }
+            return b;
+        }
         public static List<MongoEntityBikeOption> DeserializeMongoEntityBikeOptionList(string json)
         {
             List<MongoEntityBikeOption> mebs = new List<MongoEntityBikeOption>();

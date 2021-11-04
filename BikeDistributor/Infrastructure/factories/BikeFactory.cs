@@ -8,94 +8,110 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using BikeDistributor.Domain.Models;
+using Newtonsoft.Json;
+using System.Collections;
 
 namespace BikeDistributor.Infrastructure.factories
 {
-    
-        public class BikeFactory
+
+    public class BikeFactory
+    {
+        //private string bikeConfig;
+        private Bike bike;
+        private BikeVariant variant;
+        private bool isStandard = true;
+
+
+        /// <summary>
+        /// This class and this static constructor are the recommended way
+        /// to create new Bike/BikeVariant. Please see ProductTests.json for JObject structure
+        /// </summary>
+        /// <param name="ibike">A JObject configuration for the desidered bike/variant</param>
+        /// <returns></returns>
+        public static BikeFactory Create(JObject ibike)
         {
-            //private string bikeConfig;
-            private Bike bike;
-            private BikeVariant variant;
-            private bool isStandard = true;
-            
+            return new BikeFactory(ibike);
+        }
+        public static BikeFactory Create(string brand, string model, int price, bool isStandard, List<BikeOption> options = null)
+        {
+            var jibike = new JObject
+            {
+                {"Brand", brand },
+                {"Model", model },
+                {"Price", price },
+                {"isStandard", isStandard },
+                {"options", JsonConvert.SerializeObject(options) }
+            };
+           
+            return new BikeFactory(jibike);
 
-            /// <summary>
-            /// This class and this static constructor are the recommended way
-            /// to create new Bike/BikeVariant. Please see ProductTests.json for JObject structure
-            /// </summary>
-            /// <param name="ibike">A JObject configuration for the desidered bike/variant</param>
-            /// <returns></returns>
-            public static BikeFactory Create(JObject ibike)
+        }
+        /// <summary>
+        /// Please see ProductTests.json for JObject structure
+        /// </summary>
+        /// <param name="ibike">A JObject configuration for the desidered bike/variant</param>
+        private BikeFactory(JObject ibike)
+        {
+            isStandard = (bool)ibike["isStandard"];
+            string model = (string)ibike["Model"];
+            string brand = (string)ibike["Brand"];
+            int price = (int)ibike["Price"];
+            this.bike = new Bike(brand, model, price);
+            if (isStandard == false)
             {
-                return new BikeFactory(ibike);
-            }
-            /// <summary>
-            /// Please see ProductTests.json for JObject structure
-            /// </summary>
-            /// <param name="ibike">A JObject configuration for the desidered bike/variant</param>
-            private BikeFactory(JObject ibike)
-            {
-                isStandard = (bool)ibike["isStandard"];
-                string model = (string)ibike["Model"];
-                string brand = (string)ibike["Brand"];
-                int price = (int)ibike["Price"];
-                this.bike = new Bike(brand, model, price);
-                if (isStandard == false)
+                List<BikeOption> options = null;
+                if (ibike.ContainsKey("options"))
                 {
-                    List<BikeOption> options = null;
-                    if (ibike.ContainsKey("options"))
-                    {
-                        options = JsonUtils.GetListFromJArrayOption(ibike["options"].ToString());
-                    }
-
-                    this.variant = new BikeVariant(brand, model, price, options);
-
-                }
-            }
-            public BikeFactory RemoveOption(string name)
-            {
-                if (this.variant != null)
-                {
-                    this.variant.RemoveOption(name);
-                }
-                return this;
-            }
-            public BikeFactory ClearOptions()
-            {
-                if (this.variant != null)
-                {
-                    this.variant.ClearOptions();
-                }
-                return this;
-            }
-            /// <summary>
-            /// Add an option to the list of selected options 
-            /// for current BikeVariant
-            /// </summary>
-            /// <param name="option"></param>
-            /// <returns></returns>
-            public BikeFactory AddOption(IBikeOption option)
-            {
-                if (this.variant == null)
-                {
-                    //this.variant = (BikeVariant)bike; cannot cast but I could copy the values from this.bike and start the options
-                    //it is not a tech a constraint but we like it like this for commercial reason. Tests show we have other aways to achieve new variants from standad bikes
-                    throw new Exception("cannot add options to a standard bike or no bike variant was created");
-                }
-                this.variant.SetTotalPrice((BikeOption)option);
-
-                return this;
-            }
-
-            public IBike GetBike()
-            {
-                if (isStandard)
-                {
-                    return this.bike;
+                    options = JsonUtils.GetListFromJArrayOption(ibike["options"].ToString());
                 }
 
-                return this.variant;
+                this.variant = new BikeVariant(brand, model, price, options);
+
             }
         }
+        public BikeFactory RemoveOption(string name)
+        {
+            if (this.variant != null)
+            {
+                this.variant.RemoveOption(name);
+            }
+            return this;
+        }
+        public BikeFactory ClearOptions()
+        {
+            if (this.variant != null)
+            {
+                this.variant.ClearOptions();
+            }
+            return this;
+        }
+        /// <summary>
+        /// Add an option to the list of selected options 
+        /// for current BikeVariant
+        /// </summary>
+        /// <param name="option"></param>
+        /// <returns></returns>
+        public BikeFactory AddOption(IBikeOption option)
+        {
+            if (this.variant == null)
+            {
+                //this.variant = (BikeVariant)bike; cannot cast but I could copy the values from this.bike and start the options
+                //it is not a tech a constraint but we like it like this for commercial reason. Tests show we have other aways to achieve new variants from standad bikes
+                throw new Exception("cannot add options to a standard bike or no bike variant was created");
+            }
+            this.variant.SetTotalPrice((BikeOption)option);
+
+            return this;
+        }
+
+        public IBike GetBike()
+        {
+            if (isStandard)
+            {
+                return this.bike;
+            }
+
+            return this.variant;
+        }
+    }
 }
