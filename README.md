@@ -12,7 +12,7 @@ MongoDb is freely hosted by Atlas at https://www.mongodb.com/en/company
 A library project to address a specific Business Domain.
 In this case it is a greatly simplified Product Catalogue + Shopping Chart like app.
 
-We have a bunch of Domain Models (namely Product, ProductOption, Order, ReceiptFormat, Customer, Discount) wrapped into respective MongoEnititesXXX.
+We have a bunch of Domain Models (namely Product, ProductOption, Order, ReceiptFormat, Customer, Stock) wrapped into respective MongoEnititesXXX.
 
 MongoEntities are saved into respective Repository<MongoEntityXXX> which are only accessible via specialized MongoServicesXXX which take care of CRUD
   and everything else needed. An implementation of the Repository pattern, in short. 
