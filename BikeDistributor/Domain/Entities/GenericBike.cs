@@ -1,7 +1,10 @@
-﻿using Newtonsoft.Json;
+﻿using BikeDistributor.Domain.Models;
+using BikeDistributor.Infrastructure.interfaces;
+using Newtonsoft.Json;
 using Newtonsoft.Json.Serialization;
 using System;
 using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations;
 using System.Reflection;
 using System.Text;
 
@@ -10,13 +13,18 @@ namespace BikeDistributor.Domain.Entities
     /// <summary>
     /// This class seems necessary to correctly bind a blazor EditForm
     /// </summary>
-    public class GenericBike
+    public class GenericBike : IBike
     {
         public string Brand { get; set; }
+        [Required]
         public string Model { get; set; }
         public int BasePrice { get; set; } = 0;
         public string Description { get; set; }
         public bool isStandard { get; set; }
+
+        public int Price { get; set; }
+
+        public List<BikeOption> SelectedOptions { get; set; }
     }
 
     /// <summary>

@@ -2,6 +2,7 @@
 using MongoDB.Bson.Serialization.Attributes;
 using System;
 using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations;
 
 namespace BikeDistributor.Domain.Models
 {
@@ -14,6 +15,7 @@ namespace BikeDistributor.Domain.Models
 
         private int _price;
         public string Brand { get; set; }
+        
         public string Model { get; set; }
         public virtual int Price { get => _price; }
         public virtual int BasePrice { get; set; } = 0;
