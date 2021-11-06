@@ -24,7 +24,7 @@ namespace BikeDistributor.Domain.Entities
 
         public int Price { get; set; }
 
-        public List<BikeOption> SelectedOptions { get; set; }
+        public List<BikeOption> SelectedOptions { get; set; } = new List<BikeOption>();
     }
 
     /// <summary>
