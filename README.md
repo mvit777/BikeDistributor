@@ -75,4 +75,4 @@ This bot should be a console-test project and imitate the shopping behavior of 3
  - [MongoDB resources](https://www.mongodb.com/resources)
 
 ## News & Events
-- [MongoDB.local](https://events.mongodb.com/dotlocallondon?utm_campaign=Int_LCL_MongoDB.local%20London_11_21_EMEA_Virtual%20Reg%20last%20chance&utm_medium=email&utm_source=eloqua&utm_term=Last%20chance%21%20Register%20for%20FREE%20to%20join%20virtually) Tuesday, 9th November
+- [MongoDB.local](https://events.mongodb.com/dotlocallondon?utm_campaign=Int_LCL_MongoDB.local%20London_11_21_EMEA_Virtual%20Reg%20last%20chance&utm_medium=email&utm_source=eloqua&utm_term=Last%20chance%21%20Register%20for%20FREE%20to%20join%20virtually) Tuesday, 9th November (London, UK)
