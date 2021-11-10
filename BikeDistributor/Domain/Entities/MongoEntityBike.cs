@@ -28,9 +28,22 @@ namespace BikeDistributor.Domain.Entities
         public IBike Bike { get; set; }
         public MongoEntityBike(IBike bike)
         {
+            _Load(bike);
+        }
+
+        public MongoEntityBike()
+        {
+
+        }
+        public void Update(IBike bike)
+        {
+            _Load(bike);
+        }
+        protected void _Load(IBike bike)
+        {
             Bike = bike;
             Id = Bike.Model;
-           
+
             IsStandard = Bike.isStandard;
             if (IsStandard == false)
             {
@@ -38,16 +51,13 @@ namespace BikeDistributor.Domain.Entities
                 SelectedOptions = bv.SelectedOptions;
                 bv.RecalculatePrice();
                 TotalPrice = bv.Price;
+                Bike = (BikeVariant)bike;
             }
             else
             {
                 TotalPrice = Bike.Price;
+                Bike = (Bike)bike;
             }
-        }
-
-        public MongoEntityBike()
-        {
-
         }
 
     }
