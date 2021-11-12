@@ -127,7 +127,8 @@ namespace BikeDistributor.Infrastructure.core
         public static MongoEntityBike DeserializeBikeEntity(JToken token)
         {
             var obj = JObject.Parse(token.ToString());
-            var Bike = JsonConvert.DeserializeObject<Bike>(obj["bike"].ToString());
+            string objBike = obj["bike"] == null ? obj["Bike"].ToString() : obj["bike"].ToString();
+            var Bike = JsonConvert.DeserializeObject<Bike>(objBike);
             Bike.RecalculatePrice();
             return new MongoEntityBike(Bike);
         }
@@ -136,8 +137,9 @@ namespace BikeDistributor.Infrastructure.core
         {
             var obj = JObject.Parse(token.ToString());
             //TODO: DESERIALZIE BikeOptions and re-add to bike
-            var Bike = JsonConvert.DeserializeObject<BikeVariant>(obj["bike"].ToString()/*, new BikeVariantConverter()*/);
-            List<JToken> joptions = JArray.Parse(obj["bike"]["SelectedOptions"].ToString()).ToList();
+            string bikeKey = obj["bike"] == null ? "Bike" : "bike";
+            var Bike = JsonConvert.DeserializeObject<BikeVariant>(obj[bikeKey].ToString()/*, new BikeVariantConverter()*/);
+            List<JToken> joptions = JArray.Parse(obj[bikeKey]["SelectedOptions"].ToString()).ToList();
             var options = new List<BikeOption>();
             foreach (JToken o in joptions)
             {
