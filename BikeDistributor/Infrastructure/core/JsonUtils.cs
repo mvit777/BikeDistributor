@@ -115,7 +115,9 @@ namespace BikeDistributor.Infrastructure.core
 
         public static MongoEntityBike DeserializeIBikeEntity(JToken token)
         {
-            if ((bool)token["isStandard"] == true)
+            JObject jo = JObject.Parse(token.ToString());
+            bool isStandard = jo["isStandard"] == null ? (bool)jo["IsStandard"] : (bool)jo["isStandard"];
+            if (isStandard == true)
             {
                 return DeserializeBikeEntity(token);
             }
@@ -124,16 +126,18 @@ namespace BikeDistributor.Infrastructure.core
 
         public static MongoEntityBike DeserializeBikeEntity(JToken token)
         {
-            var Bike = JsonConvert.DeserializeObject<Bike>(token["bike"].ToString());
+            var obj = JObject.Parse(token.ToString());
+            var Bike = JsonConvert.DeserializeObject<Bike>(obj["bike"].ToString());
             Bike.RecalculatePrice();
             return new MongoEntityBike(Bike);
         }
 
         public static MongoEntityBike DeserializeBikeVariantEntity(JToken token)
         {
+            var obj = JObject.Parse(token.ToString());
             //TODO: DESERIALZIE BikeOptions and re-add to bike
-            var Bike = JsonConvert.DeserializeObject<BikeVariant>(token["bike"].ToString()/*, new BikeVariantConverter()*/);
-            List<JToken> joptions = JArray.Parse(token["selectedOptions"].ToString()).ToList();
+            var Bike = JsonConvert.DeserializeObject<BikeVariant>(obj["bike"].ToString()/*, new BikeVariantConverter()*/);
+            List<JToken> joptions = JArray.Parse(obj["bike"]["SelectedOptions"].ToString()).ToList();
             var options = new List<BikeOption>();
             foreach (JToken o in joptions)
             {

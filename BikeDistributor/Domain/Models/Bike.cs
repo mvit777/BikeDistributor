@@ -22,7 +22,7 @@ namespace BikeDistributor.Domain.Models
         public virtual string Description { get; set; }
 
         public virtual bool isStandard { get => true; }
-        public virtual List<BikeOption> SelectedOptions { get; set; }
+        public virtual List<BikeOption> SelectedOptions { get; set; } = new List<BikeOption>();
 
         public Bike(string brand, string model, int price)
         {
