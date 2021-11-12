@@ -1,4 +1,5 @@
 ﻿using BikeDistributor.Domain.Models;
+using BikeDistributor.Infrastructure.factories;
 using BikeDistributor.Infrastructure.interfaces;
 using MongoDB.Bson;
 using MongoDB.Bson.Serialization.Attributes;
@@ -41,22 +42,27 @@ namespace BikeDistributor.Domain.Entities
         }
         protected void _Load(IBike bike)
         {
-            Bike = bike;
-            Id = Bike.Model;
+            //Bike = bike;
+            //Id = Bike.Model;
+            Id = bike.Model;
 
-            IsStandard = Bike.isStandard;
+            IsStandard = bike.isStandard;
             if (IsStandard == false)
             {
-                var bv = (BikeVariant)bike;
-                SelectedOptions = bv.SelectedOptions;
-                bv.RecalculatePrice();
-                TotalPrice = bv.Price;
-                Bike = (BikeVariant)bike;
+                //var bv = (BikeVariant)bike;
+                //SelectedOptions = bv.SelectedOptions;
+                //bv.RecalculatePrice();
+                //TotalPrice = bv.Price;
+                Bike = (BikeVariant)BikeFactory.Create(bike.Brand, 
+                                    bike.Model, bike.Price, bike.isStandard, bike.SelectedOptions)
+                                    .GetBike();
+                TotalPrice = Bike.Price;
             }
             else
             {
-                TotalPrice = Bike.Price;
-                Bike = (Bike)bike;
+                TotalPrice = bike.Price;
+                Bike = (Bike)BikeFactory.Create(bike.Brand, 
+                                            bike.Model, bike.Price, bike.isStandard).GetBike();
             }
         }
 
