@@ -138,8 +138,8 @@ namespace BikeDistributor.Infrastructure.core
             var obj = JObject.Parse(token.ToString());
             //TODO: DESERIALZIE BikeOptions and re-add to bike
             string bikeKey = obj["bike"] == null ? "Bike" : "bike";
-            var Bike = JsonConvert.DeserializeObject<BikeVariant>(obj[bikeKey].ToString()/*, new BikeVariantConverter()*/);
-            List<JToken> joptions = JArray.Parse(obj[bikeKey]["SelectedOptions"].ToString()).ToList();
+            var Bike = JsonConvert.DeserializeObject<BikeVariant>(obj[bikeKey].ToString());
+            List<JToken> joptions = JArray.Parse(obj["bike"]["selectedOptions"].ToString()).ToList();
             var options = new List<BikeOption>();
             foreach (JToken o in joptions)
             {

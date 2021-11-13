@@ -53,16 +53,19 @@ namespace BikeDistributor.Domain.Entities
                 //SelectedOptions = bv.SelectedOptions;
                 //bv.RecalculatePrice();
                 //TotalPrice = bv.Price;
-                Bike = (BikeVariant)BikeFactory.Create(bike.Brand, 
-                                    bike.Model, bike.Price, bike.isStandard, bike.SelectedOptions)
+                //Bike = bv;
+                Bike = (BikeVariant)BikeFactory.Create(bike.Brand,
+                                    bike.Model, bike.BasePrice, bike.isStandard, bike.SelectedOptions)
                                     .GetBike();
                 TotalPrice = Bike.Price;
+               
             }
             else
             {
-                TotalPrice = bike.Price;
-                Bike = (Bike)BikeFactory.Create(bike.Brand, 
-                                            bike.Model, bike.Price, bike.isStandard).GetBike();
+                TotalPrice = bike.BasePrice;
+                Bike = (Bike)BikeFactory.Create(bike.Brand,
+                                            bike.Model, bike.BasePrice, bike.isStandard).GetBike();
+                
             }
         }
 

@@ -34,7 +34,15 @@ namespace BikeDistributor.Domain.Models
             Brand = brand;
             Model = model;
             //Price = price;
-            _price = price;
+            if(price <= 0)
+            {
+               RecalculatePrice();
+            }
+            else
+            {
+                _price = price;
+            }
+            
         }
 
         public Bike()

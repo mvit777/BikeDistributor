@@ -15,6 +15,7 @@ namespace BikeDistributor.Domain.Entities
     /// </summary>
     public class GenericBike : IBike
     {
+        [Required]
         public string Brand { get; set; }
         [Required]
         public string Model { get; set; }
@@ -25,6 +26,11 @@ namespace BikeDistributor.Domain.Entities
         public int Price { get; set; }
 
         public List<BikeOption> SelectedOptions { get; set; } = new List<BikeOption>();
+
+        public GenericBike()
+        {
+            
+        }
     }
 
     /// <summary>
