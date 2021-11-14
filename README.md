@@ -75,6 +75,9 @@ This bot should be a console-test project and imitate the shopping behavior of 3
  - [MongoDB resources](https://www.mongodb.com/resources)
  
  - [giacomelli/GeneticSharp](https://github.com/giacomelli/GeneticSharp) GeneticSharp is a fast, extensible, multi-platform and multithreading C# Genetic Algorithm library that simplifies the development of applications using Genetic Algorithms (GAs)
-
+  
+## Books I want/will read soon
+- [Deep Learning for Coders with fastai and PyTorch](https://www.oreilly.com/library/view/deep-learning-for/9781492045519/)by Jeremy Howard, Sylvain Gugger, ISBN: 9781492045526
+- [Building Data Science Applications with FastAPI](https://www.packtpub.com/product/building-data-science-applications-with-fastapi/9781801079211) By François Voron, ISBN: 9781801079211
 ## News & Events
 - [MongoDB.local](https://events.mongodb.com/dotlocallondon?utm_campaign=Int_LCL_MongoDB.local%20London_11_21_EMEA_Virtual%20Reg%20last%20chance&utm_medium=email&utm_source=eloqua&utm_term=Last%20chance%21%20Register%20for%20FREE%20to%20join%20virtually) Tuesday, 9th November (London, UK)
