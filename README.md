@@ -7,6 +7,7 @@ I restarted from scratch the one I submitted (which was quite different) this ti
 MongoDb is freely hosted by Atlas at https://www.mongodb.com/en/company
 
 As stated in the short description, my aim here is to support the largest range of technologies from .NET 4.7.2 to .NET 6.
+
 A non-secondary aim is also to select a bunch of well-established and mantained opensource libs & technologies and lightly wrap them into my own library
 
 ## Structure of the VS Solution ##
