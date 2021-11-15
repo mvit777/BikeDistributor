@@ -77,7 +77,7 @@ This bot should be a console-test project and imitate the shopping behavior of 3
  Sounds familiar? Yes, that acted as the firestarter and something more than simply inspiring for me, in fact I "stole" a lot of code from there.
   This TheCodebuzz's article is truly a must-read. It is coincise, informative and features fine crafted code.
  - [MongoDB resources](https://www.mongodb.com/resources)
- 
+ - [Reduce Customer Churn](https://info.microsoft.com/ww-landing-predictive-AI-and-marketing-automation-demo-video.html?LCID=en&ocid=eml_pg299577_gdc_comm_ba)
  - [giacomelli/GeneticSharp](https://github.com/giacomelli/GeneticSharp) GeneticSharp is a fast, extensible, multi-platform and multithreading C# Genetic Algorithm library that simplifies the development of applications using Genetic Algorithms (GAs)
   
 ## Books I want/will read soon
