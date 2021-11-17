@@ -9,6 +9,12 @@ MongoDb is freely hosted by Atlas at https://www.mongodb.com/en/company
 
 ## Structure of the VS Solution ##
 
+### MV.Framework: ###
+This is a business-domain-agnostic library.
+  It mainly contains Generic Interfaces and BaseClasses (Ex. BaseRepository) with a high potential of being re-usable in BikeDistributor-like projects.
+  
+  Same goes for other plumbing-facilities like DbQueryAsyncProvider, MongoContext, MongoSettings and the like.
+
 ### BikeDistributor: ###
 A library project to address a specific Business Domain.
 In this case it is a greatly simplified Product Catalogue + Shopping Chart like app.
@@ -22,12 +28,6 @@ MongoEntities are saved into respective Repository<MongoEntityXXX> which are onl
   
 The library also features some business-domain-specific plumbing and infrasctures that we will see later (maybe) 
 
-### MV.Framework: ###
-This is a business-domain-agnostic library.
-  It mainly contains Generic Interfaces and BaseClasses (Ex. BaseRepository) with a high potential of being re-usable in BikeDistributor-like projects.
-  
-  Same goes for other plumbing-facilities like DbQueryAsyncProvider, MongoContext, MongoSettings and the like.
-  
  ### BikeDistributor.Test: ###
  Unit-Test project for the **BikeDistributor** project
   
