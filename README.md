@@ -81,6 +81,7 @@ This bot should be a console-test project and imitate the shopping behavior of 3
   >Customer buying habits are changing. Learn how to use predictive AI and marketing automation to get a pulse on your customers’ evolving behaviors and keep them coming back.
  
   - [Dynamics 365 Customer Insights](https://dynamics.microsoft.com/en-us/ai/customer-insights/)
+  - [ML.NET](https://github.com/dotnet/machinelearning)
 
  - [giacomelli/GeneticSharp](https://github.com/giacomelli/GeneticSharp) GeneticSharp is a fast, extensible, multi-platform and multithreading C# Genetic Algorithm library that simplifies the development of applications using Genetic Algorithms (GAs)
   
