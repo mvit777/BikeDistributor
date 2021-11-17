@@ -1,5 +1,6 @@
 # BikeDistributor Library #
 A set of .netcore31 libraries to target any .NET platforms from aging but still very much in use .NET 4.7.2 to .NET 6 and its latest technologies.
+
 A non-secondary aim of this project is also to select a bunch of well-established and mantained opensource libs & technologies and lightly wrap them into my own library
 
 Also providing an abstraction layer for various db system. At the moment the only complete implementation is a MongoDB connector.
