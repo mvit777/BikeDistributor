@@ -1,14 +1,10 @@
 # BikeDistributor Library #
-Trying to evolve my attempt at TrainRoadChallengeV2 into a framework
+A set of .netcore31 libraries to target any .NET platforms from aging but still very much in use .NET 4.7.2 to .NET 6 and its latest technologies.
+A non-secondary aim of this project is also to select a bunch of well-established and mantained opensource libs & technologies and lightly wrap them into my own library
 
-This is how I'm trying to evolve my attempt at https://github.com/trainerroad/BackendRefactorChallengeV2 into a more generic framework.
-I restarted from scratch the one I submitted (which was quite different) this time on top of netcore3.1 LTS and MongoDb.
+Also providing an abstraction layer for various db system. At the moment the only complete implementation is a MongoDB connector.
 
 MongoDb is freely hosted by Atlas at https://www.mongodb.com/en/company
-
-As stated in the short description, my aim here is to support the largest range of technologies from .NET 4.7.2 to .NET 6.
-
-A non-secondary aim is also to select a bunch of well-established and mantained opensource libs & technologies and lightly wrap them into my own library
 
 ## Structure of the VS Solution ##
 
