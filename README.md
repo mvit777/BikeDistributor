@@ -82,7 +82,7 @@ This bot should be a console-test project and imitate the shopping behavior of 3
  
   - [Dynamics 365 Customer Insights](https://dynamics.microsoft.com/en-us/ai/customer-insights/)
   - [ML.NET](https://github.com/dotnet/machinelearning)
-
+  - [Model Builder](https://docs.microsoft.com/en-us/dotnet/machine-learning/automate-training-with-model-builder?WT.mc_id=dotnet-35129-website)
  - [giacomelli/GeneticSharp](https://github.com/giacomelli/GeneticSharp) GeneticSharp is a fast, extensible, multi-platform and multithreading C# Genetic Algorithm library that simplifies the development of applications using Genetic Algorithms (GAs)
   
 ## Books I want/will read soon
