@@ -7,7 +7,7 @@ Also providing an abstraction layer for various db system. At the moment the onl
 
 MongoDb is freely hosted by Atlas at https://www.mongodb.com/en/company
 
-(Having the ability to host my database on a free remote server is truly a great gift, as I can easily test latency and try my favorite spinnig stuff. Thanks again to Atlas)
+(Having the ability to host a database on a free remote server is truly a great gift, as one can easily test latency and try his/her favorite spinning stuff. Thanks again to Atlas)
 
 ## Structure of the VS Solution ##
 
