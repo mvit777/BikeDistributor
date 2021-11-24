@@ -42,7 +42,7 @@ The library also features some business-domain-specific plumbing and infrascture
   - An admin area to build the Product Catalog and manage Orders and Orders' stats
   - A public Catalogue + Shopping Chart
   
- A wasm blazor spa app in Net5.0.
+ A wasm blazor spa app in Net6.0.
   It will be nothing more than a barebone demo.
   
  ### [BikeShop.BlazorComponents](https://github.com/mvit777/BikeShop/tree/master/BikeShop.BlazorComponents)
