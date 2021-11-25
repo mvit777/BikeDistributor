@@ -1,6 +1,7 @@
 ﻿using BikeDistributor.Infrastructure.interfaces;
 using System;
 using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations;
 using System.Linq;
 using System.Reflection;
 using System.Text;
@@ -14,6 +15,7 @@ namespace BikeDistributor.Domain.Models
     //TODO: [well no] add a shortcut constructor like NewOption(string name, string description, int price) that throw and Exception for names Color, Material, Gear
     public class BikeOption : IBikeOption
     {
+        [Required]
         public virtual string Name { get; set; }
         public string Description { get; set; }
         public int Price { get; set; }

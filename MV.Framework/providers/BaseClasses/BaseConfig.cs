@@ -19,7 +19,7 @@ namespace MV.Framework
             _Load();
         }
 
-        private void _Load()
+        protected void _Load()
         {
             _rawJson = File.ReadAllText(_configFile);
         }
