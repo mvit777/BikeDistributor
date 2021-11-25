@@ -7,6 +7,8 @@ Also providing an abstraction layer for various db system. At the moment the onl
 
 MongoDb is freely hosted by Atlas at https://www.mongodb.com/en/company
 
+(Having the ability to host a database on a free remote server is truly a great gift, as one can easily test latency and try his/her favorite spinning stuff. Thanks again to Atlas)
+
 ## Structure of the VS Solution ##
 
 ### MV.Framework: ###
@@ -40,7 +42,7 @@ The library also features some business-domain-specific plumbing and infrascture
   - An admin area to build the Product Catalog and manage Orders and Orders' stats
   - A public Catalogue + Shopping Chart
   
- A wasm blazor spa app in Net5.0.
+ A wasm blazor spa app in Net6.0.
   It will be nothing more than a barebone demo.
   
  ### [BikeShop.BlazorComponents](https://github.com/mvit777/BikeShop/tree/master/BikeShop.BlazorComponents)
@@ -81,7 +83,8 @@ This bot should be a console-test project and imitate the shopping behavior of 3
   - [ML.NET](https://github.com/dotnet/machinelearning)
   - [Model Builder](https://docs.microsoft.com/en-us/dotnet/machine-learning/automate-training-with-model-builder?WT.mc_id=dotnet-35129-website)
  - [giacomelli/GeneticSharp](https://github.com/giacomelli/GeneticSharp) GeneticSharp is a fast, extensible, multi-platform and multithreading C# Genetic Algorithm library that simplifies the development of applications using Genetic Algorithms (GAs)
-  
+ 
+ - [playwright](https://playwright.dev/dotnet/) Seems there is a new kid in town of end-to-end testing (Selenium alike)
 ## Books I want/will read soon
 - [Deep Learning for Coders with fastai and PyTorch](https://www.oreilly.com/library/view/deep-learning-for/9781492045519/)by Jeremy Howard, Sylvain Gugger, ISBN: 9781492045526
 - [Building Data Science Applications with FastAPI](https://www.packtpub.com/product/building-data-science-applications-with-fastapi/9781801079211) By François Voron, ISBN: 9781801079211
