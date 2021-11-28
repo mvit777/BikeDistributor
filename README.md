@@ -70,7 +70,8 @@ This bot should be a console-test project and imitate the shopping behavior of 3
  Customer behaviors are composed by freely mixable collections of personality traits that act as indicators of a given Customer Behavior Model, so that you 
   can derive/create also new behaviorus.
   
- Customer Behavior Models are trained by BikeShop.Bot.Customer.AI
+ Customer Behavior Models will be trained by BikeShop.Bot.Customer.AI
+  
  Initial Customer Behavior Models will most inevitably start as stereotypized based on "classic" western literature on the topic of Marketing and Consumerism and then I will try 
   to drive them towards the verification of the following observation by [Karl Gerth](https://karlgerth.com/):
   
