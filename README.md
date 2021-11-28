@@ -54,7 +54,9 @@ The library also features some business-domain-specific plumbing and infrascture
 ### BikeShop.Bot.Customer.Random ###
 A selenium web-driver alike set of scripts to create Orders.
 
-It will pick Customers and issue orders randomly while testing the Blazor app user-interface
+It will pick Customers and issue orders using guided random while testing the Blazor app user-interface.
+Random values are adjusted on the customers' profile, that is to say one (type of) profile will have more chances of an other to buy/customise some type of bike or to have a particular type of interaction with user interface. 
+The data produced should act as the test pool. The alternative would be totally deterministic scripts which I feel would be much more long to code.
   
 ### BikeShop.Bot.CustomerBehaviors ###
 Mainly a dream 'coz I don't know shit of AI beyond simple linear-regression.
