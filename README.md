@@ -76,7 +76,7 @@ This bot should be a console-test project and imitate the shopping behavior of 3
   
  >What is the Chinese dream?” I think the Chinese dream is the American dream plus 10%. It’s not the European dream of restraint and conservation. I think they’re closer to Americans. They want even more, bigger, better—as a generalization of course - Karl Gerth
   
-(I know I'm getting a bit bombastic for my project targets but dreaming costs nothing. By the way, bombastic in italian can be translated as roboant(e) which adds more lol to the whole project) 
+(I know I'm getting a bit bombastic about my project targets but dreaming costs nothing.) 
  
  ## Related and inspiring links ##
  
