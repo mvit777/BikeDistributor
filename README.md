@@ -97,7 +97,8 @@ This bot should be a console-test project and imitate the shopping behavior of 3
 ## Books I want/will read soonish
 - [Deep Learning for Coders with fastai and PyTorch](https://www.oreilly.com/library/view/deep-learning-for/9781492045519/)by Jeremy Howard, Sylvain Gugger, ISBN: 9781492045526
 - [Building Data Science Applications with FastAPI](https://www.packtpub.com/product/building-data-science-applications-with-fastapi/9781801079211) By François Voron, ISBN: 9781801079211
-  - [Old and new approaches to marketing. The quest of their epistemological roots](https://mpra.ub.uni-muenchen.de/30841/1/MPRA_paper_30841.pdf) Volpato, Giuseppe and Stocchetti, Andrea
+  
+- [Old and new approaches to marketing. The quest of their epistemological roots](https://mpra.ub.uni-muenchen.de/30841/1/MPRA_paper_30841.pdf) Volpato, Giuseppe and Stocchetti, Andrea
 - [As China Goes, So Goes the World: How Chinese Consumers Are Transforming Everything](https://karlgerth.com/publications/)
 
 ## Other things I want to do before dying
