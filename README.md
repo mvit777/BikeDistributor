@@ -87,7 +87,7 @@ This bot should be a console-test project and imitate the shopping behavior of 3
  - [giacomelli/GeneticSharp](https://github.com/giacomelli/GeneticSharp) GeneticSharp is a fast, extensible, multi-platform and multithreading C# Genetic Algorithm library that simplifies the development of applications using Genetic Algorithms (GAs)
  
  - [playwright](https://playwright.dev/dotnet/) Seems there is a new kid in town of end-to-end testing (Selenium alike)
-## Books I want/will read soon
+## Books I want/will read soonish
 - [Deep Learning for Coders with fastai and PyTorch](https://www.oreilly.com/library/view/deep-learning-for/9781492045519/)by Jeremy Howard, Sylvain Gugger, ISBN: 9781492045526
 - [Building Data Science Applications with FastAPI](https://www.packtpub.com/product/building-data-science-applications-with-fastapi/9781801079211) By François Voron, ISBN: 9781801079211
   
