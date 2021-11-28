@@ -70,7 +70,9 @@ This bot should be a console-test project and imitate the shopping behavior of 3
  Customer behaviors are composed by freely mixable collections of personality traits that act as indicators of a given Customer Behavior Model, so that you 
   can derive/create also new behaviorus.
   
- Customer Behavior Models are trained by BikeShop.Bot.Customer.AI 
+ Customer Behavior Models are trained by BikeShop.Bot.Customer.AI
+  
+ >What is the Chinese dream?” I think the Chinese dream is the American dream plus 10%. It’s not the European dream of restraint and conservation. I think they’re closer to Americans. They want even more, bigger, better—as a generalization of course - Karl Gerth
  
  ## Related and inspiring links ##
  
@@ -90,7 +92,7 @@ This bot should be a console-test project and imitate the shopping behavior of 3
 ## Books I want/will read soonish
 - [Deep Learning for Coders with fastai and PyTorch](https://www.oreilly.com/library/view/deep-learning-for/9781492045519/)by Jeremy Howard, Sylvain Gugger, ISBN: 9781492045526
 - [Building Data Science Applications with FastAPI](https://www.packtpub.com/product/building-data-science-applications-with-fastapi/9781801079211) By François Voron, ISBN: 9781801079211
-  
+- [As China Goes, So Goes the World: How Chinese Consumers Are Transforming Everything](https://karlgerth.com/publications/)
 ## Other things I want to do before dying
   - Contribute in some form to the most controversial but yet incredibly short page on wikipedia [Anthropological theories of value](https://en.wikipedia.org/wiki/Anthropological_theories_of_value)
 ## News & Events
