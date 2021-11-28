@@ -78,9 +78,9 @@ This bot should be a console-test project and imitate the shopping behavior of 3
  >What is the Chinese dream?” I think the Chinese dream is the American dream plus 10%. It’s not the European dream of restraint and conservation. I think they’re closer to Americans. They want even more, bigger, better—as a generalization of course - Karl Gerth
   
 ideally I wish to also somewhat target this observation by Eric Miller (this sentence is attributed at this guy on Wikipedia page consumerism, but I cannot find reference anywhere else. Please excuse my blatant ignorance)
->Businesses have realized that wealthy consumers are the most attractive targets of marketing. The upper class's tastes, lifestyles, and preferences trickle down to become the standard for all consumers. The not-so-wealthy consumers can "purchase something new that will speak of their place in the tradition of affluence" 
+>Businesses have realized that wealthy consumers are the most attractive targets of marketing. The upper class's tastes, lifestyles, and preferences trickle down to become the > standard for all consumers. The not-so-wealthy consumers can "purchase something new that will speak of their place in the tradition of affluence" 
+
 the only other reference I found to this author and sentence is on one of the craziest but interesting internet page I have ever seen in my life
-  
 [Shea's SoapBox - BuySexual](https://sheaitisntsoopublications.wordpress.com/) I don't know who this lady is but I like her crazy Blog
   
 (I know I'm getting a bit bombastic about my project targets but dreaming costs nothing.) 
