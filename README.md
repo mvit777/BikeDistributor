@@ -54,7 +54,9 @@ The library also features some business-domain-specific plumbing and infrascture
 ### BikeShop.Bot.Customer.Random ###
 A selenium web-driver alike set of scripts to create Orders.
 
-It will pick Customers and issue orders randomly while testing the Blazor app user-interface
+It will pick Customers and issue orders using guided random while testing the Blazor app user-interface.
+Random values are adjusted on the customers' profile, that is to say one (type of) profile will have more chances of an other to buy/customise some type of bike or to have a particular type of interaction with user interface. 
+The data produced should act as the test pool. The alternative would be totally deterministic scripts which I feel would be much more long to code.
   
 ### BikeShop.Bot.CustomerBehaviors ###
 Mainly a dream 'coz I don't know shit of AI beyond simple linear-regression.
@@ -68,7 +70,20 @@ This bot should be a console-test project and imitate the shopping behavior of 3
  Customer behaviors are composed by freely mixable collections of personality traits that act as indicators of a given Customer Behavior Model, so that you 
   can derive/create also new behaviorus.
   
- Customer Behavior Models are trained by BikeShop.Bot.Customer.AI 
+ Customer Behavior Models will be trained by BikeShop.Bot.Customer.AI
+  
+ Initial Customer Behavior Models will most inevitably start as stereotypized based on "classic" western literature on the topic of Marketing and Consumerism and then I will try 
+  to drive them towards the verification of the following observation by [Karl Gerth](https://karlgerth.com/):
+  
+ >What is the Chinese dream?” I think the Chinese dream is the American dream plus 10%. It’s not the European dream of restraint and conservation. I think they’re closer to Americans. They want even more, bigger, better—as a generalization of course - Karl Gerth
+  
+ideally I wish to also somewhat target this observation by Eric Miller (this sentence is attributed at this guy on Wikipedia page consumerism, but I cannot find reference anywhere else. I apologise for my blatant ignorance)
+>Businesses have realized that wealthy consumers are the most attractive targets of marketing. The upper class's tastes, lifestyles, and preferences trickle down to become the > standard for all consumers. The not-so-wealthy consumers can "purchase something new that will speak of their place in the tradition of affluence"
+
+the only other reference I found to this author and sentence is on one of the craziest but interesting internet page I have ever seen in my life
+[Shea's SoapBox - BuySexual](https://sheaitisntsoopublications.wordpress.com/) I don't know who this lady is but I like her crazy blog even if it looks abandoned
+  
+I know I'm getting a bit bombastic about my project targets but dreaming costs nothing.
  
  ## Related and inspiring links ##
  
@@ -85,10 +100,13 @@ This bot should be a console-test project and imitate the shopping behavior of 3
  - [giacomelli/GeneticSharp](https://github.com/giacomelli/GeneticSharp) GeneticSharp is a fast, extensible, multi-platform and multithreading C# Genetic Algorithm library that simplifies the development of applications using Genetic Algorithms (GAs)
  
  - [playwright](https://playwright.dev/dotnet/) Seems there is a new kid in town of end-to-end testing (Selenium alike)
-## Books I want/will read soon
+## Books I want/will read soonish
 - [Deep Learning for Coders with fastai and PyTorch](https://www.oreilly.com/library/view/deep-learning-for/9781492045519/)by Jeremy Howard, Sylvain Gugger, ISBN: 9781492045526
 - [Building Data Science Applications with FastAPI](https://www.packtpub.com/product/building-data-science-applications-with-fastapi/9781801079211) By François Voron, ISBN: 9781801079211
   
+- [Old and new approaches to marketing. The quest of their epistemological roots](https://mpra.ub.uni-muenchen.de/30841/1/MPRA_paper_30841.pdf) Volpato, Giuseppe and Stocchetti, Andrea
+- [As China Goes, So Goes the World: How Chinese Consumers Are Transforming Everything](https://karlgerth.com/publications/)
+
 ## Other things I want to do before dying
   - Contribute in some form to the most controversial but yet incredibly short page on wikipedia [Anthropological theories of value](https://en.wikipedia.org/wiki/Anthropological_theories_of_value)
 ## News & Events
