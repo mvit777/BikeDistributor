@@ -17,4 +17,8 @@ namespace BikeDistributor.Infrastructure.interfaces
     {
 
     }
+    public interface IOrderRepository : IBaseRepository<MongoEntityOrder>
+    {
+
+    }
 }

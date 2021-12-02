@@ -9,7 +9,7 @@ using System.Threading.Tasks;
 
 namespace BikeDistributor.Domain.Models
 {
-    public class Order
+    public class Order : IRendable
     {
         protected double _TaxRate = .0725d;//maybe retrieve from config
         protected CultureInfo _CurrentCulture = null;

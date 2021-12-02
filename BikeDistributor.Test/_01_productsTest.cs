@@ -184,5 +184,11 @@ namespace BikeDistributor.Test
             meb.TotalPrice.Should().Equals(Bike.OneThousand);
         }
 
+        [Fact]
+        public void _01_07_CreateOrder()
+        {
+
+        }
+
     }
 }
