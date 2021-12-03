@@ -96,12 +96,12 @@ I know I'm getting a bit bombastic about my project targets but dreaming costs n
  
   - [Dynamics 365 Customer Insights](https://dynamics.microsoft.com/en-us/ai/customer-insights/)
   - [ML.NET](https://github.com/dotnet/machinelearning) is a cross-platform open-source machine learning (ML) framework for .NET.
-  - [Model Builder](https://docs.microsoft.com/en-us/dotnet/machine-learning/automate-training-with-model-builder?WT.mc_id=dotnet-35129-website)
+    - [Model Builder](https://docs.microsoft.com/en-us/dotnet/machine-learning/automate-training-with-model-builder?WT.mc_id=dotnet-35129-website) ML.NET Model Builder is an intuitive graphical Visual Studio extension to build, train, and deploy custom machine learning models.
  - [giacomelli/GeneticSharp](https://github.com/giacomelli/GeneticSharp) GeneticSharp is a fast, extensible, multi-platform and multithreading C# Genetic Algorithm library that simplifies the development of applications using Genetic Algorithms (GAs)
  
  - [playwright](https://playwright.dev/dotnet/) Seems there is a new kid in town of end-to-end testing (Selenium alike)
 ## Books I want/will read soonish
-- [Deep Learning for Coders with fastai and PyTorch](https://www.oreilly.com/library/view/deep-learning-for/9781492045519/)by Jeremy Howard, Sylvain Gugger, ISBN: 9781492045526
+- [Deep Learning for Coders with fastai and PyTorch](https://www.oreilly.com/library/view/deep-learning-for/9781492045519/) by Jeremy Howard, Sylvain Gugger, ISBN: 9781492045526
 - [Building Data Science Applications with FastAPI](https://www.packtpub.com/product/building-data-science-applications-with-fastapi/9781801079211) By François Voron, ISBN: 9781801079211
   
 - [Old and new approaches to marketing. The quest of their epistemological roots](https://mpra.ub.uni-muenchen.de/30841/1/MPRA_paper_30841.pdf) Volpato, Giuseppe and Stocchetti, Andrea
