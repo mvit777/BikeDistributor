@@ -95,7 +95,7 @@ I know I'm getting a bit bombastic about my project targets but dreaming costs n
   >Customer buying habits are changing. Learn how to use predictive AI and marketing automation to get a pulse on your customers’ evolving behaviors and keep them coming back.
  
   - [Dynamics 365 Customer Insights](https://dynamics.microsoft.com/en-us/ai/customer-insights/)
-  - [ML.NET](https://github.com/dotnet/machinelearning)
+  - [ML.NET](https://github.com/dotnet/machinelearning) is a cross-platform open-source machine learning (ML) framework for .NET.
   - [Model Builder](https://docs.microsoft.com/en-us/dotnet/machine-learning/automate-training-with-model-builder?WT.mc_id=dotnet-35129-website)
  - [giacomelli/GeneticSharp](https://github.com/giacomelli/GeneticSharp) GeneticSharp is a fast, extensible, multi-platform and multithreading C# Genetic Algorithm library that simplifies the development of applications using Genetic Algorithms (GAs)
  
@@ -110,4 +110,3 @@ I know I'm getting a bit bombastic about my project targets but dreaming costs n
 ## Other things I want to do before dying
   - Contribute in some form to the most controversial but yet incredibly short page on wikipedia [Anthropological theories of value](https://en.wikipedia.org/wiki/Anthropological_theories_of_value)
 ## News & Events
-- [MongoDB.local](https://events.mongodb.com/dotlocallondon?utm_campaign=Int_LCL_MongoDB.local%20London_11_21_EMEA_Virtual%20Reg%20last%20chance&utm_medium=email&utm_source=eloqua&utm_term=Last%20chance%21%20Register%20for%20FREE%20to%20join%20virtually) Tuesday, 9th November (London, UK)
