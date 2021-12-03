@@ -110,3 +110,4 @@ I know I'm getting a bit bombastic about my project targets but dreaming costs n
 ## Other things I want to do before dying
   - Contribute in some form to the most controversial but yet incredibly short page on wikipedia [Anthropological theories of value](https://en.wikipedia.org/wiki/Anthropological_theories_of_value)
 ## News & Events
+- [Migrare a MongoDB](https://events.mongodb.com/darelazionaleamongodb?utm_campaign=Int_WB_Webinar%20da%20relazionale%20a%20MongoDB_01_22_EMEA%20E-mail%201&utm_medium=email&utm_source=eloqua&utm_term=%5BSAVE%20THE%20DATE%5D%20Migrare%20un%27applicazione%20da%20un%20database%20relazionale%20a%20MongoDB%3A%20perch%C3%83%C2%A9%20e%20come%20farlo) Una serie in 3 atti di webinar sulla migrazione da un database relazionale a MongoDB
