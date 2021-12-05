@@ -105,8 +105,9 @@ I know I'm getting a bit bombastic about my project targets but dreaming costs n
 - [Building Data Science Applications with FastAPI](https://www.packtpub.com/product/building-data-science-applications-with-fastapi/9781801079211) By François Voron, ISBN: 9781801079211
   
 - [Old and new approaches to marketing. The quest of their epistemological roots](https://mpra.ub.uni-muenchen.de/30841/1/MPRA_paper_30841.pdf) Volpato, Giuseppe and Stocchetti, Andrea
-- [As China Goes, So Goes the World: How Chinese Consumers Are Transforming Everything](https://karlgerth.com/publications/)
-
+- [As China Goes, So Goes the World: How Chinese Consumers Are Transforming Everything](https://karlgerth.com/publications/) by Karl Gerth
+- [A Thousand Brains: A New Theory of Intelligence](https://www.goodreads.com/book/show/54503521-a-thousand-brains) by Jeff Hawkins, Richard Dawkins. ISBN 154167581
+  This book is on Guglielmo Cancelli latest reading list and sounds pretty interesting
 ## Other things I want to do before dying
   - Contribute in some form to the most controversial but yet incredibly short page on wikipedia [Anthropological theories of value](https://en.wikipedia.org/wiki/Anthropological_theories_of_value)
 ## News & Events
