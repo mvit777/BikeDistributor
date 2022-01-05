@@ -108,6 +108,7 @@ I know I'm getting a bit bombastic about my project targets but dreaming costs n
 - [As China Goes, So Goes the World: How Chinese Consumers Are Transforming Everything](https://karlgerth.com/publications/) by Karl Gerth
 - [A Thousand Brains: A New Theory of Intelligence](https://www.goodreads.com/book/show/54503521-a-thousand-brains) by Jeff Hawkins, Richard Dawkins. ISBN 154167581
   This book is on Guglielmo Cancelli latest reading list and sounds pretty interesting
+- [Confessions of an Advertising Man] by David Ogilvy - Atheneum, Revised edition, 1988, ISBN 0-689-70800-9
 ## Other things I want to do before dying
   - Contribute in some form to the most controversial but yet incredibly short page on wikipedia [Anthropological theories of value](https://en.wikipedia.org/wiki/Anthropological_theories_of_value)
 ## News & Events
